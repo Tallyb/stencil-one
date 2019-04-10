@@ -5,7 +5,7 @@
  */
 
 
-import { JSXBase } from '@stencil/core/internal';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { JSX } from '@stencil/core';
 
 
@@ -24,11 +24,6 @@ export namespace Components {
     */
     'middle': string;
   }
-}
-
-interface HTMLStencilElement extends HTMLElement {
-  componentOnReady(): Promise<this>;
-  forceUpdate(): void;
 }
 
 declare namespace LocalJSX {
@@ -65,6 +60,7 @@ declare module "@stencil/core" {
 }
 
 declare global {
+
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {

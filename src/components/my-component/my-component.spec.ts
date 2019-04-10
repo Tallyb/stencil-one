@@ -1,18 +1,21 @@
-import { newSpecPage } from '@stencil/core/testing';
+import {newSpecPage} from '@stencil/core/testing';
 
-import { MyComponent } from './my-component';
+import {MyComponent} from './my-component';
 
-it('override default values from attribute', async () => {
-  const { root } = await newSpecPage({
+it('override default values from attribute', async() => {
+  const {root} = await newSpecPage({
     components: [MyComponent],
-    html: `<my-component some-prop="value"></my-component>`,
+    html: `<my-component first="Hello" last="World"></my-component>`
   });
 
   expect(root).toEqualHtml(`
-    <my-component first="value">
-      value
-    </my-component>
-  `);
+  <my-component class="hydrated" first="Hello" last="World">
+    <shadow-root>
+      <div>
+      Hello, World! I'm Hello World
+      </div>
+    </shadow-root>
+  </my-component>`);
 
-  expect(root.someProp).toBe('value');
+  expect(root.first).toBe('Hello');
 });

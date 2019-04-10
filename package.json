@@ -18,7 +18,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^1.0.0-alpha.4",
+    "@stencil/core": "^1.0.0-alpha.6",
     "@types/jest": "23.3.14",
     "@types/puppeteer": "1.12.3",
     "jest": "23.6.0",
