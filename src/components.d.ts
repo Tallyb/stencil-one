@@ -40,6 +40,7 @@ declare namespace LocalJSX {
     * The middle name
     */
     'middle'?: string;
+    'onButtonClicked'?: (event: CustomEvent<string>) => void;
   }
 
   interface ElementInterfaces {

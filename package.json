@@ -13,17 +13,17 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^1.0.0-alpha.6",
-    "@types/jest": "23.3.14",
+    "@stencil/core": "^1.0.0-alpha.14",
+    "@types/jest": "24.0.11",
     "@types/puppeteer": "1.12.3",
-    "jest": "23.6.0",
-    "jest-cli": "23.6.0",
-    "puppeteer": "1.12.2"
+    "jest": "^24.7.1",
+    "jest-cli": "24.7.1",
+    "puppeteer": "1.14.0"
   },
   "license": "MIT"
 }

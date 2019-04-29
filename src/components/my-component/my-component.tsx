@@ -1,4 +1,4 @@
-import { Component, Prop, h, JSX } from '@stencil/core';
+import { Component, Prop, h, JSX, Event, EventEmitter } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -22,11 +22,24 @@ export class MyComponent {
    */
   @Prop() last: string;
 
+  @Event() buttonClicked: EventEmitter<string>;
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
+   onClicked(value: string) {
+     console.log('Value Clicked is ', value);
+   }
 
   render() : JSX.Element {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return (
+      <div class="nice">
+      <span>
+        Hello, World! I'm {this.getText()}
+      </span>
+      <button onClick={()=>this.onClicked('ABCD')}>
+        Click Me!
+      </button>
+      </div>
+    );
   }
 }
