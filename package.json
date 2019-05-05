@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build:prod": "stencil build --prod --prerender",
     "start": "stencil build --dev --watch --serve",
     "test": "jest",
     "test:watch": "jest --watch"
