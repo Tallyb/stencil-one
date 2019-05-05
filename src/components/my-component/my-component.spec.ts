@@ -23,6 +23,7 @@ it('Should render', async() => {
   </my-component>
   `);
 
+  expect(root).toMatchSnapshot();
   let text = root._shadowRoot.querySelector('span');
   expect(text.textContent).toBe(`Hello, World! I'm Hello World`);
   expect(root.first).toEqual('Hello')
