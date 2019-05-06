@@ -24,6 +24,7 @@
     "@types/puppeteer": "1.12.3",
     "jest": "^24.7.1",
     "jest-cli": "24.7.1",
+    "jest-fetch-mock": "^2.1.2",
     "puppeteer": "1.14.0"
   },
   "license": "MIT"

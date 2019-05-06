@@ -22,7 +22,6 @@ export class MyFetchComponent {
                     return response.json();
                 })
                 .then(json => {
-                    //console.log(json);
                     console.log('JSON', json);
                 });
         }
