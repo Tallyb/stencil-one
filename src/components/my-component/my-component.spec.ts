@@ -24,7 +24,7 @@ it('Should render', async() => {
   `);
 
   expect(root).toMatchSnapshot();
-  let text = root._shadowRoot.querySelector('span');
+  let text = root.shadowRoot.querySelector('span');
   expect(text.textContent).toBe(`Hello, World! I'm Hello World`);
   expect(root.first).toEqual('Hello')
 });
@@ -34,7 +34,7 @@ it('Should emit', async() => {
     components: [MyComponent],
     html: `<my-component first="John" last="Doe"></my-component>`
   });
-  let button = root._shadowRoot.querySelector('button');
+  let button = root.shadowRoot.querySelector('button');
   let buttonClicked = jest.fn();
   win.addEventListener('buttonClicked', buttonClicked);
   button.click();
@@ -46,7 +46,7 @@ it('Should emit', async() => {
     components: [MyComponent],
     html: `<my-component first="John" last="Doe"></my-component>`
   });
-  let button = root._shadowRoot.querySelector('button');
+  let button = root.shadowRoot.querySelector('button');
   let buttonClicked = jest.fn();
   win.addEventListener('buttonClicked', buttonClicked);
   button.click();
