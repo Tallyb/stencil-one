@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+import {GlobalWithFetchMock} from "jest-fetch-mock";
 
 import { MyFetchComponent } from './my-fetch';
 
@@ -24,19 +25,10 @@ describe('app', () => {
     });
 
     it('should render with language', async () => {
-        let mockFetch = jest.fn(() => {
-            console.log('I am mocking')
-            return new Promise(() => {
-                return {
-                    ok: true,
-                    json: {}
-                }
-            });
+
+        fetch['mockResponse']({
+            val: 'adfd'
         });
-        // Object.defineProperty(global, 'fetch', {
-        //     value: mockFetch,
-        //     writable: true
-        // })
         
         const page = await newSpecPage({
             components: [MyFetchComponent],
