@@ -24,6 +24,9 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface MyFetch {
+    'language': string;
+  }
 }
 
 declare namespace LocalJSX {
@@ -42,13 +45,18 @@ declare namespace LocalJSX {
     'middle'?: string;
     'onButtonClicked'?: (event: CustomEvent<string>) => void;
   }
+  interface MyFetch extends JSXBase.HTMLAttributes {
+    'language'?: string;
+  }
 
   interface ElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'MyFetch': Components.MyFetch;
   }
 
   interface IntrinsicElements {
     'MyComponent': LocalJSX.MyComponent;
+    'MyFetch': LocalJSX.MyFetch;
   }
 }
 export { LocalJSX as JSX };
@@ -68,12 +76,20 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLMyFetchElement extends Components.MyFetch, HTMLStencilElement {}
+  var HTMLMyFetchElement: {
+    prototype: HTMLMyFetchElement;
+    new (): HTMLMyFetchElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'my-fetch': HTMLMyFetchElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'my-fetch': HTMLMyFetchElement;
   }
 }
 
