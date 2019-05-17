@@ -2,53 +2,62 @@ import {newSpecPage} from '@stencil/core/testing';
 
 import {MyComponent} from './component';
 
-it('Should render', async() => {
-  const {root, styles} = await newSpecPage({
-    components: [MyComponent],
-    html: `<my-component first="Hello" last="World"></my-component>`
+describe('component', () => {
+  it('Should render without serializing shadow dom', async() => {
+    const {root, styles} = await newSpecPage({
+      components: [MyComponent],
+      html: `<my-component first="Hello" last="World">Some Text</my-component>`,
+      serializedShadowDom: true
+    });
+
+    expect(root).toEqualHtml(`
+      <my-component class=\"hydrated\" first=\"Hello\" last=\"World\">
+        <shadow-root>
+          <div class=\"nice\">
+            <span>
+              Hello, World! I'm Hello World
+            </span>
+            <button>
+              Click Me!
+            </button>
+          </div>
+        </shadow-root>
+        Some Text
+      </my-component>
+    `);
   });
 
-  expect(root).toEqualHtml(`
-    <my-component class=\"hydrated\" first=\"Hello\" last=\"World\">
-    <shadow-root>
-      <div class=\"nice\">
-        <span>
+  it('Should render with serializing shadow dom', async() => {
+    const { root } = await newSpecPage({
+      components: [MyComponent],
+      html: `<my-component first="Hello" last="World">Some Text</my-component>`,
+      serializedShadowDom: false
+    });
+
+    expect(root).toEqualHtml(`
+     <my-component class="hydrated sc-my-component-h" first="Hello" last="World">
+      <!---->
+      Some Text      
+      <div class="nice sc-my-component">
+        <span class="sc-my-component">
           Hello, World! I'm Hello World
         </span>
-        <button>
+        <button class="sc-my-component">
           Click Me!
         </button>
       </div>
-    </shadow-root>
-  </my-component>
-  `);
-
-  expect(root).toMatchSnapshot();
-  let text = root.shadowRoot.querySelector('span');
-  expect(text.textContent).toBe(`Hello, World! I'm Hello World`);
-  expect(root.first).toEqual('Hello')
-});
-
-it('Should emit', async() => {
-  const {root, win} = await newSpecPage({
-    components: [MyComponent],
-    html: `<my-component first="John" last="Doe"></my-component>`
+      `);
   });
-  let button = root.shadowRoot.querySelector('button');
-  let buttonClicked = jest.fn();
-  win.addEventListener('buttonClicked', buttonClicked);
-  button.click();
-  expect(buttonClicked).toHaveBeenCalled;
-});
 
-it('Should emit', async() => {
-  const {root, win} = await newSpecPage({
-    components: [MyComponent],
-    html: `<my-component first="John" last="Doe"></my-component>`
+  it('Should emit', async() => {
+    const {root, win} = await newSpecPage({components: [MyComponent], html: `<my-component first="John" last="Doe"></my-component>`});
+    let button = root
+      .shadowRoot
+      .querySelector('button');
+    let buttonClicked = jest.fn();
+    win.addEventListener('buttonClicked', buttonClicked);
+    button.click();
+    expect(buttonClicked).toHaveBeenCalled;
   });
-  let button = root.shadowRoot.querySelector('button');
-  let buttonClicked = jest.fn();
-  win.addEventListener('buttonClicked', buttonClicked);
-  button.click();
-  expect(buttonClicked).toHaveBeenCalled;
+
 });

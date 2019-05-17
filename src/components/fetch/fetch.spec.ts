@@ -2,7 +2,7 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { MyFetchComponent } from './fetch';
 
-describe('app', () => {
+describe('fetch', () => {
 
     it('should render', async () => {
         const page = await newSpecPage({
