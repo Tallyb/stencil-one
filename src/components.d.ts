@@ -24,6 +24,9 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface MyInput {
+    'header': string;
+  }
 }
 
 declare namespace LocalJSX {
@@ -42,25 +45,29 @@ declare namespace LocalJSX {
     'middle'?: string;
     'onButtonClicked'?: (event: CustomEvent<string>) => void;
   }
-
-  interface ElementInterfaces {
-    'MyComponent': Components.MyComponent;
+  interface MyInput extends JSXBase.HTMLAttributes {
+    'header'?: string;
+    'onThisHappened'?: (event: CustomEvent<any>) => void;
   }
 
   interface IntrinsicElements {
-    'MyComponent': LocalJSX.MyComponent;
+    'my-component': MyComponent;
+    'my-input': MyInput;
   }
 }
+
 export { LocalJSX as JSX };
+
 
 declare module "@stencil/core" {
   export namespace JSX {
-    interface ElementInterfaces extends LocalJSX.ElementInterfaces {}
     interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }
 }
 
+
 declare global {
+
 
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
@@ -68,12 +75,18 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {}
+  var HTMLMyInputElement: {
+    prototype: HTMLMyInputElement;
+    new (): HTMLMyInputElement;
+  };
+
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'my-component': HTMLMyComponentElement;
+    'my-input': HTMLMyInputElement;
   }
 
-  interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
-  }
+  interface ElementTagNameMap extends HTMLElementTagNameMap {}
 }
 
