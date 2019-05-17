@@ -7,7 +7,11 @@ import { Component, Prop, h, JSX} from '@stencil/core';
 })
 export class MyComplexPropComponent {
 
-  @Prop() data: Array<string>;
+  @Prop() data: Array<string> = [];
+
+  componentWillLoad() {
+    this.data = this.data.map( i => i.toUpperCase());
+  }
 
   render() : JSX.Element {
     return (
