@@ -4,6 +4,12 @@ import { MyComplexPropComponent } from './complex-prop';
 
 describe('complex prop', () => {
 
+    it ('should change to upper case', () => {
+        let cmp = new MyComplexPropComponent();
+        let res = cmp.toUpper(['aaa', 'bbb', 'ccc']);
+        expect(res).toEqual(['AAA', 'BBB', 'CCC']);
+    });
+
     it('should render', async () => {
         const page = await newSpecPage({
             components: [MyComplexPropComponent],

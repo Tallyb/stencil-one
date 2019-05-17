@@ -9,9 +9,12 @@ export class MyComplexPropComponent {
 
   @Prop({mutable: true}) data: Array<string> = [];
 
+  toUpper (items: Array<string>) {
+    return items.map( i => i.toUpperCase());
+  }
   componentWillLoad() {
-    this.data = this.data.map( i => i.toUpperCase());
-    console.log('UPPER DATA', this.data);
+    this.data = this.toUpper(this.data);
+    console.log('Will load', this.data);
   }
 
   render() : JSX.Element {
