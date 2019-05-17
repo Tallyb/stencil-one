@@ -10,6 +10,9 @@ import { JSX } from '@stencil/core';
 
 
 export namespace Components {
+  interface MyComplexProp {
+    'data': Array<string>;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -24,17 +27,18 @@ export namespace Components {
     */
     'middle': string;
   }
-<<<<<<< HEAD
-  interface MyInput {
-    'header': string;
-=======
   interface MyFetch {
     'language': string;
->>>>>>> fetch-jest-mock
+  }
+  interface MyInput {
+    'header': string;
   }
 }
 
 declare namespace LocalJSX {
+  interface MyComplexProp extends JSXBase.HTMLAttributes {
+    'data'?: Array<string>;
+  }
   interface MyComponent extends JSXBase.HTMLAttributes {
     /**
     * The first name
@@ -50,29 +54,19 @@ declare namespace LocalJSX {
     'middle'?: string;
     'onButtonClicked'?: (event: CustomEvent<string>) => void;
   }
-<<<<<<< HEAD
+  interface MyFetch extends JSXBase.HTMLAttributes {
+    'language'?: string;
+  }
   interface MyInput extends JSXBase.HTMLAttributes {
     'header'?: string;
     'onThisHappened'?: (event: CustomEvent<any>) => void;
   }
 
   interface IntrinsicElements {
+    'my-complex-prop': MyComplexProp;
     'my-component': MyComponent;
+    'my-fetch': MyFetch;
     'my-input': MyInput;
-=======
-  interface MyFetch extends JSXBase.HTMLAttributes {
-    'language'?: string;
-  }
-
-  interface ElementInterfaces {
-    'MyComponent': Components.MyComponent;
-    'MyFetch': Components.MyFetch;
-  }
-
-  interface IntrinsicElements {
-    'MyComponent': LocalJSX.MyComponent;
-    'MyFetch': LocalJSX.MyFetch;
->>>>>>> fetch-jest-mock
   }
 }
 
@@ -90,24 +84,23 @@ declare global {
 
 
 
+  interface HTMLMyComplexPropElement extends Components.MyComplexProp, HTMLStencilElement {}
+  var HTMLMyComplexPropElement: {
+    prototype: HTMLMyComplexPropElement;
+    new (): HTMLMyComplexPropElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
-<<<<<<< HEAD
-=======
 
   interface HTMLMyFetchElement extends Components.MyFetch, HTMLStencilElement {}
   var HTMLMyFetchElement: {
     prototype: HTMLMyFetchElement;
     new (): HTMLMyFetchElement;
   };
-  interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
-    'my-fetch': HTMLMyFetchElement
-  }
->>>>>>> fetch-jest-mock
 
   interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {}
   var HTMLMyInputElement: {
@@ -116,12 +109,10 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'my-complex-prop': HTMLMyComplexPropElement;
     'my-component': HTMLMyComponentElement;
-<<<<<<< HEAD
-    'my-input': HTMLMyInputElement;
-=======
     'my-fetch': HTMLMyFetchElement;
->>>>>>> fetch-jest-mock
+    'my-input': HTMLMyInputElement;
   }
 
   interface ElementTagNameMap extends HTMLElementTagNameMap {}

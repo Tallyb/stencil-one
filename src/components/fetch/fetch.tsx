@@ -2,7 +2,7 @@ import { Component, h, JSX,  Prop, Watch } from '@stencil/core';
 
 @Component({
     tag: 'my-fetch',
-    styleUrl: 'my-fetch.css'
+    styleUrl: 'fetch.css'
 })
 export class MyFetchComponent {
 
