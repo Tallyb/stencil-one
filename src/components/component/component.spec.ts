@@ -1,6 +1,6 @@
 import {newSpecPage} from '@stencil/core/testing';
 
-import {MyComponent} from './my-component';
+import {MyComponent} from './component';
 
 it('Should render', async() => {
   const {root, styles} = await newSpecPage({

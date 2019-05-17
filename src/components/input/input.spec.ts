@@ -1,6 +1,6 @@
 import {newSpecPage} from '@stencil/core/testing';
 
-import {MyInput} from './my-input';
+import {MyInput} from './input';
 
 describe('MyInput', () => {
    
