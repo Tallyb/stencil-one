@@ -55,6 +55,32 @@ describe('component', () => {
       expect(root.querySelector('button')).toBeTruthy();
 
     });
+
+    it('Should render setting content later', async() => {
+      const html = `<my-component first="Hello" last="World">Some Text</my-component>`;
+      const page = await newSpecPage({
+        components: [MyComponent],
+        serializedShadowDom: true
+      });
+      await page.setContent(html);
+      //await page.waitForChanges();
+  
+      expect(page.doc.body).toEqualHtml(`
+       <my-component class="hydrated" first="Hello" last="World">
+         <shadow-root>
+           <div class="nice">
+             <span>
+               Hello, World! I'm Hello World
+             </span>
+             <button>
+               Click Me!
+             </button>
+           </div>
+         </shadow-root>
+         Some Text
+         </my-component>
+         `);
+       });
   });
   
 
