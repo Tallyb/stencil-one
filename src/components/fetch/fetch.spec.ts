@@ -23,11 +23,12 @@ describe('fetch', () => {
         `)
     });
 
-    xit('should render with language', async () => {
+    it('should render with language', async () => {
 
-        fetch['mockResponse']({
-            val: 'adfd'
-        });
+        Object.defineProperty(global, 'fetch', {
+            value: jest.fn(),
+            writable: true
+        }) ;
         
         const page = await newSpecPage({
             components: [MyFetchComponent],
