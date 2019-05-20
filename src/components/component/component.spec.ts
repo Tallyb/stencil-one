@@ -98,4 +98,19 @@ describe('component', () => {
     expect(buttonClicked).toHaveBeenCalled;
   });
 
+  it('Should run method', async() => {
+    const page = await newSpecPage({
+      components: [MyComponent],
+      html: `<my-component first="John" last="Doe"></my-component>`
+    });
+    
+    let button = page.root.shadowRoot.querySelector('button');
+    expect(button.textContent).toEqual('Click Me!')  
+    let ret = await page.rootInstance.updateFace('New Click!');
+    await page.waitForChanges();
+    expect(ret).toEqual('NEW CLICK!');
+    expect(button.textContent).toEqual('New Click!');
+  });
+  
+
 });
