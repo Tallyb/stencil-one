@@ -18,7 +18,7 @@ describe('complex prop', () => {
                 </my-complex-prop>
             `
         });
-        page.rootInstance.data = ['aaa', 'bbb', 'ccc'];
+        page.rootInstance.values = ['aaa', 'bbb', 'ccc'];
         await page.waitForChanges();
         expect(page.root).toEqualHtml(`
          <my-complex-prop class="hydrated">
@@ -46,18 +46,13 @@ describe('complex prop', () => {
     });
     it('should render with data', async () => {
         const page = await newSpecPage({
-            components: [MyComplexPropComponent],
-            html: `
-                <div>
-                </div>
-            `
+            components: [MyComplexPropComponent]
         });
-        let cmp: any = page.doc.createElement('my-complex-prop');
-        cmp.data = ['aaa', 'bbb', 'ccc'];
-        await page.waitForChanges();
+        let cmp = page.doc.createElement('my-complex-prop');
         page.doc.appendChild(cmp);
         await page.waitForChanges();
-        // expect(page.root).toEqualHtml(`
+        // let my = page.doc.querySelector('my-complex-prop'); //this is now ""
+        // expect(my.shadowRoot).toEqualHtml(`
         //  <my-complex-prop class="hydrated">
         //    <shadow-root>
         //      <div class="nice">

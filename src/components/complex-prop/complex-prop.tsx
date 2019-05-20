@@ -7,20 +7,20 @@ import { Component, Prop, h, JSX} from '@stencil/core';
 })
 export class MyComplexPropComponent {
 
-  @Prop({mutable: true}) data: Array<string> = [];
+  @Prop({mutable: true}) values: Array<string> = [];
 
   toUpper (items: Array<string>) {
     return items.map( i => i.toUpperCase());
   }
   componentWillLoad() {
-    this.data = this.toUpper(this.data);
-    console.log('Will load', this.data);
+    this.values = this.toUpper(this.values);
+    console.log('Will load', this.values);
   }
 
   render() : JSX.Element {
     return (
       <div class="nice">
-      {this.data.map((item) => {
+      {this.values.map((item) => {
             return <div class="item">
                 <span>{item}</span>
             </div>
