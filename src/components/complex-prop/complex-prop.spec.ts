@@ -46,35 +46,38 @@ describe('complex prop', () => {
     });
     it('should render with data', async () => {
         const page = await newSpecPage({
-            components: [MyComplexPropComponent]
+            components: [MyComplexPropComponent],
+            html: '<div></div>'
         });
         let cmp = page.doc.createElement('my-complex-prop');
-        page.doc.appendChild(cmp);
+        (cmp as any).values = ['aaa', 'bbb', 'ccc'];
+        page.root.appendChild(cmp);
         await page.waitForChanges();
-        // let my = page.doc.querySelector('my-complex-prop'); //this is now ""
-        // expect(my.shadowRoot).toEqualHtml(`
-        //  <my-complex-prop>
-        //    <mock:shadow-root>
-        //      <div class="nice">
-        //        <div class="item">
-        //          <span>
-        //            aaa
-        //          </span>
-        //        </div>
-        //        <div class="item">
-        //          <span>
-        //            bbb
-        //          </span>
-        //        </div>
-        //        <div class="item">
-        //          <span>
-        //            ccc
-        //          </span>
-        //        </div>
-        //      </div>
-        //    </mock:shadow-root>
-        //  </my-complex-prop>
-        // `)
+        expect(page.root).toEqualHtml(`
+        <div>
+          <my-complex-prop>
+            <mock:shadow-root>
+              <div class=\"nice\">
+                <div class=\"item\">
+                  <span>
+                    AAA
+                  </span>
+                </div>
+                <div class=\"item\">
+                  <span>
+                    BBB
+                  </span>
+                </div>
+                <div class=\"item\">
+                  <span>
+                    CCC
+                  </span>
+                </div>
+              </div>
+            </mock:shadow-root>
+          </my-complex-prop>
+        </div>
+        `)
     });
 
 
