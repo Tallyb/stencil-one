@@ -21,8 +21,8 @@ describe('complex prop', () => {
         page.rootInstance.values = ['aaa', 'bbb', 'ccc'];
         await page.waitForChanges();
         expect(page.root).toEqualHtml(`
-         <my-complex-prop class="hydrated">
-           <shadow-root>
+         <my-complex-prop>
+           <mock:shadow-root>
              <div class="nice">
                <div class="item">
                  <span>
@@ -40,7 +40,7 @@ describe('complex prop', () => {
                  </span>
                </div>
              </div>
-           </shadow-root>
+           </mock:shadow-root>
          </my-complex-prop>
         `)
     });
@@ -53,8 +53,8 @@ describe('complex prop', () => {
         await page.waitForChanges();
         // let my = page.doc.querySelector('my-complex-prop'); //this is now ""
         // expect(my.shadowRoot).toEqualHtml(`
-        //  <my-complex-prop class="hydrated">
-        //    <shadow-root>
+        //  <my-complex-prop>
+        //    <mock:shadow-root>
         //      <div class="nice">
         //        <div class="item">
         //          <span>
@@ -72,7 +72,7 @@ describe('complex prop', () => {
         //          </span>
         //        </div>
         //      </div>
-        //    </shadow-root>
+        //    </mock:shadow-root>
         //  </my-complex-prop>
         // `)
     });

@@ -14,8 +14,7 @@ describe('fetch', () => {
             `
         });
         expect(page.root).toEqualHtml(`
-            <my-fetch class=\"hydrated\">
-                <!---->
+            <my-fetch>
                 <p>
                     This is the app
                 </p>
@@ -49,8 +48,7 @@ describe('fetch', () => {
 
         expect(fetchMock).toHaveBeenCalledWith('./assets/i18n/fr.json');
         expect(page.root).toEqualHtml(`
-            <my-fetch class=\"hydrated\" language=\"fr\">
-            <!---->
+            <my-fetch language=\"fr\">
             <p>
             This is the app
             </p>
@@ -59,7 +57,7 @@ describe('fetch', () => {
     });
 
     it('should throw on json error', async () => {
-        const fetchMock = jest.fn().mockImplementation( v => {
+        const fetchMock = jest.fn().mockImplementation( () => {
             return Promise.resolve({
                 ok: false
             });
@@ -80,8 +78,7 @@ describe('fetch', () => {
             html
         });
         expect(page.root).toEqualHtml(`
-            <my-fetch class=\"hydrated\" language=\"fr\">
-                <!---->
+            <my-fetch language=\"fr\">
                 <p>
                 This is the app
                 </p>

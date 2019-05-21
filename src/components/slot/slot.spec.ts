@@ -15,17 +15,17 @@ describe('complex prop', () => {
             `
         });
         expect(page.root).toEqualHtml(`
-        <my-slot class=\"hydrated\">
-          <shadow-root>
+        <my-slot>
+          <mock:shadow-root>
             <div class=\"cool\">
               <h>
                 I am a header
               </h>
               <slot></slot>
             </div>
-          </shadow-root>
-          <my-component class=\"hydrated\">
-            <shadow-root>
+          </mock:shadow-root>
+          <my-component>
+            <mock:shadow-root>
               <div class=\"nice\">
                 <span>
                   Hello, World! I'm
@@ -34,7 +34,7 @@ describe('complex prop', () => {
                   Click Me!
                 </button>
               </div>
-            </shadow-root>
+            </mock:shadow-root>
           </my-component>
         </my-slot>
         `)

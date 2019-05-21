@@ -8,12 +8,12 @@ describe('component', () => {
       const {root, styles} = await newSpecPage({
         components: [MyComponent],
         html: `<my-component first="Hello" last="World">Some Text</my-component>`,
-        serializedShadowDom: true
+        supportsShadowDom: true
       });
   
       expect(root).toEqualHtml(`
-        <my-component class=\"hydrated\" first=\"Hello\" last=\"World\">
-          <shadow-root>
+        <my-component first=\"Hello\" last=\"World\">
+          <mock:shadow-root>
             <div class=\"nice\">
               <span>
                 Hello, World! I'm Hello World
@@ -22,7 +22,7 @@ describe('component', () => {
                 Click Me!
               </button>
             </div>
-          </shadow-root>
+          </mock:shadow-root>
           Some Text
         </my-component>
       `);
@@ -35,18 +35,17 @@ describe('component', () => {
       const { root } = await newSpecPage({
         components: [MyComponent],
         html: `<my-component first="Hello" last="World">Some Text</my-component>`,
-        serializedShadowDom: false
+        supportsShadowDom: false
       });
   
       expect(root).toEqualHtml(`
-       <my-component class="hydrated sc-my-component-h" first="Hello" last="World">
-        <!---->
+       <my-component first="Hello" last="World">
         Some Text      
-        <div class="nice sc-my-component">
-          <span class="sc-my-component">
+        <div class="nice">
+          <span>
             Hello, World! I'm Hello World
           </span>
-          <button class="sc-my-component">
+          <button>
             Click Me!
           </button>
         </div>
@@ -60,14 +59,14 @@ describe('component', () => {
       const html = `<my-component first="Hello" last="World">Some Text</my-component>`;
       const page = await newSpecPage({
         components: [MyComponent],
-        serializedShadowDom: true
+        supportsShadowDom: true
       });
       await page.setContent(html);
       //await page.waitForChanges();
   
       expect(page.doc.body).toEqualHtml(`
-       <my-component class="hydrated" first="Hello" last="World">
-         <shadow-root>
+       <my-component first="Hello" last="World">
+         <mock:shadow-root>
            <div class="nice">
              <span>
                Hello, World! I'm Hello World
@@ -76,7 +75,7 @@ describe('component', () => {
                Click Me!
              </button>
            </div>
-         </shadow-root>
+         </mock:shadow-root>
          Some Text
          </my-component>
          `);
