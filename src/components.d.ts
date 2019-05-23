@@ -6,12 +6,11 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import { JSX } from '@stencil/core';
 
 
 export namespace Components {
   interface MyComplexProp {
-    'data': Array<string>;
+    'values': Array<string>;
   }
   interface MyComponent {
     /**
@@ -26,6 +25,7 @@ export namespace Components {
     * The middle name
     */
     'middle': string;
+    'updateFace': (value: string) => Promise<string>;
   }
   interface MyFetch {
     'language': string;
@@ -33,11 +33,14 @@ export namespace Components {
   interface MyInput {
     'header': string;
   }
+  interface MySlot {
+    'values': Array<string>;
+  }
 }
 
 declare namespace LocalJSX {
   interface MyComplexProp extends JSXBase.HTMLAttributes {
-    'data'?: Array<string>;
+    'values'?: Array<string>;
   }
   interface MyComponent extends JSXBase.HTMLAttributes {
     /**
@@ -61,12 +64,16 @@ declare namespace LocalJSX {
     'header'?: string;
     'onThisHappened'?: (event: CustomEvent<any>) => void;
   }
+  interface MySlot extends JSXBase.HTMLAttributes {
+    'values'?: Array<string>;
+  }
 
   interface IntrinsicElements {
     'my-complex-prop': MyComplexProp;
     'my-component': MyComponent;
     'my-fetch': MyFetch;
     'my-input': MyInput;
+    'my-slot': MySlot;
   }
 }
 
@@ -108,11 +115,18 @@ declare global {
     new (): HTMLMyInputElement;
   };
 
+  interface HTMLMySlotElement extends Components.MySlot, HTMLStencilElement {}
+  var HTMLMySlotElement: {
+    prototype: HTMLMySlotElement;
+    new (): HTMLMySlotElement;
+  };
+
   interface HTMLElementTagNameMap {
     'my-complex-prop': HTMLMyComplexPropElement;
     'my-component': HTMLMyComponentElement;
     'my-fetch': HTMLMyFetchElement;
     'my-input': HTMLMyInputElement;
+    'my-slot': HTMLMySlotElement;
   }
 
   interface ElementTagNameMap extends HTMLElementTagNameMap {}

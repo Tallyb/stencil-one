@@ -32,6 +32,9 @@ export class MyComponent {
     return this.buttonFace.toUpperCase();
   }
 
+  getOne (): string {
+    return 'This is a string'
+  }
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }

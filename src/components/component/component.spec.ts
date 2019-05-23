@@ -4,6 +4,11 @@ import {MyComponent} from './component';
 
 describe('component', () => {
   describe('render', () => {
+    it('should return text', () => {
+      let cmp = new MyComponent(); 
+      expect(cmp.getOne()).toEqual('This is a string');
+    });
+    
     it('Should render with serializing shadow dom', async() => {
       const {root, styles} = await newSpecPage({
         components: [MyComponent],
