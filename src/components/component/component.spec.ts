@@ -1,18 +1,21 @@
 import {newSpecPage} from '@stencil/core/testing';
 
 import {MyComponent} from './component';
-import { format } from '../../utils/utils';
+import * as utils from '../../utils/utils';
 
 describe('component', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  }) 
   describe('render', () => {
     it('should return text', () => {
       let cmp = new MyComponent(); 
       expect(cmp.getOne()).toEqual('This is a string');
     });
     
-    fit ('should format mock value', async () => {
+    it ('should format mock value', async () => {
       // this is here to show mocking example. 
-      format = jest.fn().mockReturnValue('Tally Barak');
+      jest.spyOn(utils, 'format').mockReturnValue('Tally Barak');
       const {root} = await newSpecPage({
         components: [MyComponent],
         html: `<my-component first="Hello" last="World">Some Text</my-component>`,
@@ -20,7 +23,6 @@ describe('component', () => {
       });
       let span = root.shadowRoot.querySelector('span');
       expect(span.textContent).toEqual('Hello, World! I\'m Tally Barak');
-      jest.resetModules();
     });
 
     it('Should render with serializing shadow dom', async() => {
