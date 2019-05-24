@@ -4,7 +4,7 @@ import {MyInput} from './input';
 
 describe('MyInput', () => {
    
-  it('Should emit', async() => {
+  it('Should emit thisHappened when input entered', async() => {
     const TEST_VALUE = 'Test Value'
     const page = await newSpecPage({
       components: [ MyInput ],
