@@ -23,6 +23,7 @@ export class MyComponent {
   @Prop() last: string;
 
   @State() buttonFace: string = 'Click Me!';
+  @State() clicked: boolean;
 
   @Event() buttonClicked: EventEmitter<string>;
   
@@ -40,12 +41,14 @@ export class MyComponent {
   }
     
   onClicked(value: string) {
-     console.log('Value Clicked is ', value);
+    console.log('value is: ', value);
+     this.clicked = !this.clicked;
+
   }
 
   render() : JSX.Element {
     return (
-      <div class="nice">
+      <div class={{nice: true, clicked: this.clicked}} >
       <span>
         Hello, World! I'm {this.getText()}
       </span>
