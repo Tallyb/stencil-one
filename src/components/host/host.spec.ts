@@ -7,12 +7,7 @@ describe('complex prop', () => {
     it('should render', async () => {
         const page = await newSpecPage({
             components: [MyHostComponent],
-            html: `
-            <div>    
-              <my-host>
-                </my-host>
-              </div>
-            `
+            html: `<my-host></my-host>`
         });
         expect(page.root).toEqualHtml(`
         <my-host class=\"cool\">

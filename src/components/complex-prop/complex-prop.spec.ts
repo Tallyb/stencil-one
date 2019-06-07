@@ -20,29 +20,7 @@ describe('complex prop', () => {
         });
         page.rootInstance.values = ['aaa', 'bbb', 'ccc'];
         await page.waitForChanges();
-        expect(page.root).toEqualHtml(`
-         <my-complex-prop>
-           <mock:shadow-root>
-             <div class="nice">
-               <div class="item">
-                 <span>
-                   aaa
-                 </span>
-               </div>
-               <div class="item">
-                 <span>
-                   bbb
-                 </span>
-               </div>
-               <div class="item">
-                 <span>
-                   ccc
-                 </span>
-               </div>
-             </div>
-           </mock:shadow-root>
-         </my-complex-prop>
-        `)
+        expect(page.root).toMatchSnapshot();
     });
     it('should render with data', async () => {
         const page = await newSpecPage({
@@ -53,32 +31,6 @@ describe('complex prop', () => {
         (cmp as any).values = ['aaa', 'bbb', 'ccc'];
         page.root.appendChild(cmp);
         await page.waitForChanges();
-        expect(page.root).toEqualHtml(`
-        <div>
-          <my-complex-prop>
-            <mock:shadow-root>
-              <div class=\"nice\">
-                <div class=\"item\">
-                  <span>
-                    AAA
-                  </span>
-                </div>
-                <div class=\"item\">
-                  <span>
-                    BBB
-                  </span>
-                </div>
-                <div class=\"item\">
-                  <span>
-                    CCC
-                  </span>
-                </div>
-              </div>
-            </mock:shadow-root>
-          </my-complex-prop>
-        </div>
-        `)
+        expect(page.root).toMatchSnapshot();
     });
-
-
 });

@@ -1,4 +1,4 @@
-import { Component, Prop, h, JSX} from '@stencil/core';
+import { Component, Prop, h, JSX, Watch} from '@stencil/core';
 
 @Component({
   tag: 'my-complex-prop',
@@ -12,11 +12,18 @@ export class MyComplexPropComponent {
   toUpper (items: Array<string>) {
     return items.map( i => i.toUpperCase());
   }
-  componentWillLoad() {
-    this.values = this.toUpper(this.values);
+
+  @Watch('values') //this will run everytime values are changed
+  onValuesChange(newValue: any, oldValue: any) {
+    //change to upper here
+  } 
+
+  componentWillLoad() { // this wi
     console.log('Will load', this.values);
+    this.values = this.toUpper(this.values);
   }
 
+  
   render() : JSX.Element {
     return (
       <div class="nice">
