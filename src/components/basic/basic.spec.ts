@@ -3,35 +3,36 @@ import { newSpecPage } from "@stencil/core/dist/testing";
 import { MyBasic } from './basic';
 
 describe('basic', () => {
-    it('should render with shadow dom', async () => {
-        const page = await newSpecPage({
-            html: `<my-basic first="Julia" last="Roberts"></my-basic>`,
-            components: [MyBasic]
-        });
-        expect(page.root).toEqualHtml(`
-            <my-basic first=\"Julia\" last=\"Roberts\">
-                <mock:shadow-root>
-                     <p class="nice">
-                        My name is Roberts Julia
-                    </p>
-                </mock:shadow-root>
-            </my-basic>
-        `);
-    });
+
+    const html = `
+    <my-basic first="Julia" last="Roberts">
+        <p slot class="cool">Cool!</p>
+    </my-basic>
+    `;
+    const components = [MyBasic];
 
     it('should render with shadow dom', async () => {
         const page = await newSpecPage({
-            html: `<my-basic first="Julia" last="Roberts"></my-basic>`,
-            components: [MyBasic],
+            html,
+            components
+        });
+        expect(page.root.shadowRoot).toBeTruthy();
+        expect(page.root.querySelector('.nice')).toBeFalsy();
+        expect(page.root.shadowRoot.querySelector('.nice')).toBeTruthy();
+        expect(page.root.querySelector('.cool')).toBeTruthy();
+        expect(page.root).toMatchSnapshot();
+    });
+
+    it('should render without shadow dom', async () => {
+        const page = await newSpecPage({
+            html,
+            components,
             supportsShadowDom: false
         });
-        expect(page.root).toEqualHtml(`
-            <my-basic first=\"Julia\" last=\"Roberts\">
-                <p class="nice">
-                    My name is Roberts Julia
-                </p>
-            </my-basic>
-        `);
+        expect(page.root.shadowRoot).toBeFalsy();
+        expect(page.root.querySelector('.nice')).toBeTruthy();
+        expect(page.root.querySelector('.cool')).toBeTruthy();
+
     });
 
 });

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic should render with shadow dom 1`] = `
+<my-basic first="Julia" last="Roberts">
+  <mock:shadow-root>
+    <div>
+      <p class="nice">
+        My name is Roberts Julia
+      </p>
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <p class="cool" slot="">
+    Cool!
+  </p>
+</my-basic>
+`;

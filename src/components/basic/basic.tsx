@@ -13,7 +13,11 @@ export class MyBasic {
   
     render(): JSX.Element {
         return (
-            <p class="nice">My name is {this.last} {this.first}</p>
+            <div>
+                <p class="nice">My name is {this.last} {this.first}</p>
+                <slot/>
+            </div>
+            
         );
     }
 }
