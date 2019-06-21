@@ -25,27 +25,25 @@ exports[`complex prop should render 1`] = `
 `;
 
 exports[`complex prop should render with data 1`] = `
-<div>
-  <my-complex-prop>
-    <mock:shadow-root>
-      <div class="nice">
-        <div class="item">
-          <span>
-            AAA
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            BBB
-          </span>
-        </div>
-        <div class="item">
-          <span>
-            CCC
-          </span>
-        </div>
+<my-complex-prop>
+  <mock:shadow-root>
+    <div class="nice">
+      <div class="item">
+        <span>
+          AAA
+        </span>
       </div>
-    </mock:shadow-root>
-  </my-complex-prop>
-</div>
+      <div class="item">
+        <span>
+          BBB
+        </span>
+      </div>
+      <div class="item">
+        <span>
+          CCC
+        </span>
+      </div>
+    </div>
+  </mock:shadow-root>
+</my-complex-prop>
 `;
