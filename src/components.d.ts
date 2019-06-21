@@ -9,6 +9,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface MyBasic {
+    'first': string;
+    'last': string;
+  }
   interface MyComplexProp {
     'values': Array<string>;
   }
@@ -27,6 +31,9 @@ export namespace Components {
     'middle': string;
     'updateFace': (value: string) => Promise<string>;
   }
+  interface MyEvent {
+    'updateFace': (value: string) => Promise<string>;
+  }
   interface MyFetch {
     'language': string;
   }
@@ -36,6 +43,20 @@ export namespace Components {
   interface MyInput {
     'header': string;
   }
+  interface MyInstance {
+    /**
+    * The first name
+    */
+    'first': string;
+    /**
+    * The last name
+    */
+    'last': string;
+    /**
+    * The middle name
+    */
+    'middle': string;
+  }
   interface MySlot {
     'values': Array<string>;
   }
@@ -43,6 +64,12 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLMyBasicElement extends Components.MyBasic, HTMLStencilElement {}
+  var HTMLMyBasicElement: {
+    prototype: HTMLMyBasicElement;
+    new (): HTMLMyBasicElement;
+  };
 
   interface HTMLMyComplexPropElement extends Components.MyComplexProp, HTMLStencilElement {}
   var HTMLMyComplexPropElement: {
@@ -54,6 +81,12 @@ declare global {
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
+  };
+
+  interface HTMLMyEventElement extends Components.MyEvent, HTMLStencilElement {}
+  var HTMLMyEventElement: {
+    prototype: HTMLMyEventElement;
+    new (): HTMLMyEventElement;
   };
 
   interface HTMLMyFetchElement extends Components.MyFetch, HTMLStencilElement {}
@@ -74,22 +107,35 @@ declare global {
     new (): HTMLMyInputElement;
   };
 
+  interface HTMLMyInstanceElement extends Components.MyInstance, HTMLStencilElement {}
+  var HTMLMyInstanceElement: {
+    prototype: HTMLMyInstanceElement;
+    new (): HTMLMyInstanceElement;
+  };
+
   interface HTMLMySlotElement extends Components.MySlot, HTMLStencilElement {}
   var HTMLMySlotElement: {
     prototype: HTMLMySlotElement;
     new (): HTMLMySlotElement;
   };
   interface HTMLElementTagNameMap {
+    'my-basic': HTMLMyBasicElement;
     'my-complex-prop': HTMLMyComplexPropElement;
     'my-component': HTMLMyComponentElement;
+    'my-event': HTMLMyEventElement;
     'my-fetch': HTMLMyFetchElement;
     'my-host': HTMLMyHostElement;
     'my-input': HTMLMyInputElement;
+    'my-instance': HTMLMyInstanceElement;
     'my-slot': HTMLMySlotElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface MyBasic extends JSXBase.HTMLAttributes<HTMLMyBasicElement> {
+    'first'?: string;
+    'last'?: string;
+  }
   interface MyComplexProp extends JSXBase.HTMLAttributes<HTMLMyComplexPropElement> {
     'values'?: Array<string>;
   }
@@ -108,6 +154,9 @@ declare namespace LocalJSX {
     'middle'?: string;
     'onButtonClicked'?: (event: CustomEvent<string>) => void;
   }
+  interface MyEvent extends JSXBase.HTMLAttributes<HTMLMyEventElement> {
+    'onButtonClicked'?: (event: CustomEvent<string>) => void;
+  }
   interface MyFetch extends JSXBase.HTMLAttributes<HTMLMyFetchElement> {
     'language'?: string;
   }
@@ -118,16 +167,33 @@ declare namespace LocalJSX {
     'header'?: string;
     'onThisHappened'?: (event: CustomEvent<any>) => void;
   }
+  interface MyInstance extends JSXBase.HTMLAttributes<HTMLMyInstanceElement> {
+    /**
+    * The first name
+    */
+    'first'?: string;
+    /**
+    * The last name
+    */
+    'last'?: string;
+    /**
+    * The middle name
+    */
+    'middle'?: string;
+  }
   interface MySlot extends JSXBase.HTMLAttributes<HTMLMySlotElement> {
     'values'?: Array<string>;
   }
 
   interface IntrinsicElements {
+    'my-basic': MyBasic;
     'my-complex-prop': MyComplexProp;
     'my-component': MyComponent;
+    'my-event': MyEvent;
     'my-fetch': MyFetch;
     'my-host': MyHost;
     'my-input': MyInput;
+    'my-instance': MyInstance;
     'my-slot': MySlot;
   }
 }

@@ -1,8 +1,7 @@
 import { Component, State, Event, Method, EventEmitter, h , JSX } from '@stencil/core';
 
 @Component({
-    tag: 'my-event',
-    styleUrl: 'event.css'
+    tag: 'my-event'
 })
 export class MyEvent {
     @State() buttonFace: string = 'Click Me!';

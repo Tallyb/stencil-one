@@ -6,10 +6,7 @@ import { Component, h, JSX,  Prop, Watch } from '@stencil/core';
 })
 export class MyFetchComponent {
 
-    // tslint:disable-next-line:component-member-order
     @Prop() language: string;
-
-    protected backbuttonListener;
 
     @Watch('language')
     async onLanguageChange() {
@@ -27,21 +24,9 @@ export class MyFetchComponent {
         }
     }
     componentWillLoad() {
-        this.backbuttonListener = (e) => {
-            e.preventDefault();
-        };
-        document.addEventListener('backbutton', this.backbuttonListener, false);
-
         if (this.language) {
             this.onLanguageChange();
         }
-    }
-
-    componentDidLoad() {
-    }
-
-    componentDidUnload() {
-        document.removeEventListener('backbutton', this.backbuttonListener, false);
     }
 
     render(): JSX.Element {
