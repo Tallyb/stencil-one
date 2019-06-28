@@ -7,6 +7,7 @@ export const config: Config = {
     { type: 'docs-readme' },
     {
       type: 'www',
+      baseUrl: 'https://localhost:3000',
       serviceWorker: null // disable service workers
     }
   ]
