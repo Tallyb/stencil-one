@@ -21,13 +21,13 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@stencil/core": "^1.1.2"
+    "@stencil/core": "^1.1.7"
   },
   "devDependencies": {
     "@types/fetch-mock": "^7.3.1",
     "@types/jest": "^24.0.15",
     "@types/puppeteer": "1.12.4",
-    "fetch-mock": "^7.3.3",
+    "fetch-mock": "^7.3.6",
     "jest": "^24.8.0",
     "jest-cli": "24.8.0",
     "jest-fetch-mock": "^2.1.2",
