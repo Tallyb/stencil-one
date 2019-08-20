@@ -23,7 +23,4 @@ export class MyInstance {
     return [this.first, this.middle, this.last].filter (e => !!e).join(' ');
   }
 
-  private doNothing() {
-    return; 
-  }
 }
