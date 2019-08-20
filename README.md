@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Tallyb/stencil-one.svg?style=svg)](https://circleci.com/gh/Tallyb/stencil-one)
+
 # stencil-one
 Testing stencil one version
 
