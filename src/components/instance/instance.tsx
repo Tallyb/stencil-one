@@ -20,7 +20,11 @@ export class MyInstance {
   @Prop() last: string;
 
   format () {
+    this.doNothing();
     return [this.first, this.middle, this.last].filter (e => !!e).join(' ');
   }
 
+  private doNothing() {
+    return; 
+  }
 }
