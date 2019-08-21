@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/Tallyb/stencil-one.svg?style=svg)](https://circleci.com/gh/Tallyb/stencil-one)
+[![CircleCI](https://circleci.com/gh/Tallyb/stencil-one.svg?style=svg)](https://circleci.com/gh/Tallyb/stencil-one) [![Greenkeeper badge](https://badges.greenkeeper.io/Tallyb/stencil-one.svg)](https://greenkeeper.io/)
 
 # stencil-one
 Testing stencil one version
