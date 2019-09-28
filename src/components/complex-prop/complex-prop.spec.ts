@@ -31,6 +31,10 @@ describe('complex prop', () => {
         (cmp as any).values = ['aaa', 'bbb', 'ccc'];
         page.root.appendChild(cmp);
         await page.waitForChanges();
+        let el = await page.doc.querySelector('my-complex-prop');
+        let items = el.shadowRoot.querySelectorAll('.item')
+        expect(items.length).toEqual(3);
+        expect(items[0].textContent).toEqual('AAA');
         expect(page.root).toMatchSnapshot();
     });
 });
