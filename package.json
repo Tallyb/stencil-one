@@ -17,7 +17,7 @@
     "build": "stencil build --docs --dev",
     "build:prod": "stencil build --prod --prerender",
     "start": "stencil build --dev --watch --serve",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "dependencies": {
