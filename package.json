@@ -21,7 +21,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@stencil/core": "^1.7.0"
+    "@stencil/core": "^1.7.1"
   },
   "devDependencies": {
     "@types/fetch-mock": "^7.3.1",
