@@ -24,15 +24,14 @@
     "@stencil/core": "^1.8.1"
   },
   "devDependencies": {
-    "@types/fetch-mock": "^7.3.2",
     "@types/jest": "^24.0.23",
-    "@types/puppeteer": "^1.20.3",
-    "fetch-mock": "^7.7.3",
+    "@types/puppeteer": "^2.0.0",
+    "fetch-mock": "^8.0.0",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
     "jest-fetch-mock": "^2.1.2",
     "node-fetch": "^2.6.0",
-    "puppeteer": "^1.20.0",
+    "puppeteer": "^2.0.0",
     "tslint": "^5.20.1"
   },
   "license": "MIT"
