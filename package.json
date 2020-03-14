@@ -21,18 +21,18 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@stencil/core": "^1.9.0"
+    "@stencil/core": "^1.9.2"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "@types/puppeteer": "^2.0.1",
-    "fetch-mock": "^9.1.1",
+    "fetch-mock": "^9.1.2",
     "jest": "^25.0.0",
     "jest-cli": "^25.0.0",
     "jest-fetch-mock": "^3.0.3",
     "node-fetch": "^2.6.0",
     "puppeteer": "^2.1.1",
-    "tslint": "^6.0.0"
+    "tslint": "^6.1.0"
   },
   "license": "MIT"
 }
