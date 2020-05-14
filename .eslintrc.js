@@ -18,7 +18,9 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'jest',
+    'import'
   ],
   'rules': {
     'indent': [

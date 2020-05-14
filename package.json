@@ -30,6 +30,8 @@
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "eslint": "^7.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.11.0",
     "fetch-mock": "^9.9.0",
     "jest": "^26.0.1",
     "jest-cli": "^26.0.1",
