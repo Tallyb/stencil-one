@@ -18,21 +18,24 @@
     "build:prod": "stencil build --prod --prerender",
     "start": "stencil build --dev --watch --serve",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
-    "@stencil/core": "^1.9.2"
+    "@stencil/core": "^1.13.0"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.4",
-    "@types/puppeteer": "^2.0.1",
-    "fetch-mock": "^9.1.2",
-    "jest": "^25.0.0",
-    "jest-cli": "^25.0.0",
+    "@types/jest": "^25.2.2",
+    "@types/puppeteer": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^7.0.0",
+    "fetch-mock": "^9.9.0",
+    "jest": "^26.0.1",
+    "jest-cli": "^26.0.1",
     "jest-fetch-mock": "^3.0.3",
     "node-fetch": "^2.6.0",
-    "puppeteer": "^2.1.1",
-    "tslint": "^6.1.0"
+    "puppeteer": "^3.0.4"
   },
   "license": "MIT"
 }
