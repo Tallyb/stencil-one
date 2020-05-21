@@ -1,4 +1,4 @@
-![CI](https://github.com/Tallyb/stencil-one/workflows/CI/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/Tallyb/stencil-one.svg)](https://greenkeeper.io/)
+![CI](https://github.com/Tallyb/stencil-one/workflows/CI/badge.svg) 
 
 # stencil-one
 Testing stencil one version
