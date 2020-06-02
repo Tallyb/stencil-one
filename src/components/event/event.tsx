@@ -1,7 +1,7 @@
 import { Component, State, Event, Method, EventEmitter, h , JSX } from '@stencil/core';
 
 @Component({
-    tag: 'my-event'
+  tag: 'my-event'
 })
 export class MyEvent {
     @State() buttonFace: string = 'Click Me!';
@@ -16,16 +16,16 @@ export class MyEvent {
     }
 
     onClicked(value: string) {
-        console.log('value is: ', value);
-         this.clicked = !this.clicked; 
-         this.buttonClicked.emit('Yep!')   
-      }
+      console.log('value is: ', value);
+      this.clicked = !this.clicked; 
+      this.buttonClicked.emit('Yep!');   
+    }
     
     render(): JSX.Element {
-        return (
-            <button onClick={()=>this.onClicked('ABCD')}>
-                {this.buttonFace}
-            </button>
-        );
+      return (
+        <button onClick={()=>this.onClicked('ABCD')}>
+          {this.buttonFace}
+        </button>
+      );
     }
 }
