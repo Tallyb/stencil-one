@@ -10,6 +10,7 @@ it ('Should format the name', () => {
 
 it ('Should do nothing', () => {
   const cmp = new MyInstance();
-  expect(cmp.doNothing()).toBeFalsy();
+  // @ts-expect-error
+  expect(cmp.doNothing()).toBeFalsy(); 
 });
 
