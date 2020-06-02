@@ -37,6 +37,7 @@
     "jest-cli": "^26.0.1",
     "jest-fetch-mock": "^3.0.3",
     "node-fetch": "^2.6.0",
+    "prettier": "^2.0.5",
     "puppeteer": "^3.3.0"
   },
   "license": "MIT"
