@@ -1,19 +1,21 @@
+import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MyEvent } from './event';
 
 describe('Event', () => {
     let page;
+    const buttonSpy = jest.fn();
     beforeEach(async () => {
         page = await newSpecPage({
             components: [MyEvent],
-            html: `<my-event></my-event>`
+            template: () => (<my-event
+                onButtonClicked={(ev) => buttonSpy(ev)}
+            ></my-event>)
         });
     });
     
     it('Should emit on click', async() => {
         let button = page.root.querySelector('button');
-        let buttonSpy = jest.fn();
-        page.win.addEventListener('buttonClicked', buttonSpy);
         button.click();
         await page.waitForChanges();
         expect(buttonSpy).toHaveBeenCalled();
@@ -28,5 +30,5 @@ describe('Event', () => {
         await page.waitForChanges();
         expect(ret).toEqual('NEW CLICK!');
         expect(button.textContent).toEqual('New Click!');
-      });
+    });
 });
