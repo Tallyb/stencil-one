@@ -38,7 +38,8 @@
     "jest-fetch-mock": "^3.0.3",
     "node-fetch": "^2.6.1",
     "prettier": "^2.3.0",
-    "puppeteer": "^9.1.1"
+    "puppeteer": "^9.1.1",
+    "standard-version": "^9.3.0"
   },
   "license": "MIT"
 }
