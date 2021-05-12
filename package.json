@@ -1,6 +1,6 @@
 {
   "name": "stencil-one",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
