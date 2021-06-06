@@ -201,7 +201,7 @@ declare namespace LocalJSX {
 export { LocalJSX as JSX };
 
 
-declare module "@stencil/core" {
+declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }

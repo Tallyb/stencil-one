@@ -34,7 +34,7 @@ export class MyComponent {
   }
 
   getOne (): string {
-    return 'This is a string'
+    return 'This is a string';
   }
   private getText(): string {
     return format(this.first, this.middle, this.last);
@@ -42,19 +42,19 @@ export class MyComponent {
     
   onClicked(value: string) {
     console.log('value is: ', value);
-     this.clicked = !this.clicked;
+    this.clicked = !this.clicked;
 
   }
 
   render() : JSX.Element {
     return (
       <div class={{nice: true, clicked: this.clicked}} >
-      <span>
+        <span>
         Hello, World! I'm {this.getText()}
-      </span>
-      <button onClick={()=>this.onClicked('ABCD')}>
-        {this.buttonFace}
-      </button>
+        </span>
+        <button onClick={()=>this.onClicked('ABCD')}>
+          {this.buttonFace}
+        </button>
       </div>
     );
   }

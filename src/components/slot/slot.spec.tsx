@@ -5,19 +5,19 @@ import { MyComponent } from '../component/component';
 
 describe('complex prop', () => {
 
-    it('should render', async () => {
-        const page = await newSpecPage({
-            components: [MySlotComponent, MyComponent],
-            html: `
+  it('should render', async () => {
+    const page = await newSpecPage({
+      components: [MySlotComponent, MyComponent],
+      html: `
                 <my-slot>
                   <my-component></my-component>
                 </my-slot>
             `
-        });
-        expect(page.root).toEqualHtml(`
+    });
+    expect(page.root).toEqualHtml(`
         <my-slot>
           <mock:shadow-root>
-            <div class=\"cool\">
+            <div class="cool">
               <h>
                 I am a header
               </h>
@@ -26,7 +26,7 @@ describe('complex prop', () => {
           </mock:shadow-root>
           <my-component>
             <mock:shadow-root>
-              <div class=\"nice\">
+              <div class="nice">
                 <span>
                   Hello, World! I'm
                 </span>
@@ -37,7 +37,7 @@ describe('complex prop', () => {
             </mock:shadow-root>
           </my-component>
         </my-slot>
-        `)
-    });
+        `);
+  });
     
 });

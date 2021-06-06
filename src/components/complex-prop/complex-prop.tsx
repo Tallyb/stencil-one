@@ -27,10 +27,10 @@ export class MyComplexPropComponent {
   render() : JSX.Element {
     return (
       <div class="nice">
-      {this.values.map((item) => {
-            return <div class="item">
-                <span>{item}</span>
-            </div>
+        {this.values.map((item) => {
+          return <div class="item">
+            <span>{item}</span>
+          </div>;
         })}
       </div>
     );

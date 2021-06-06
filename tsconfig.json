@@ -2,25 +2,25 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "declaration": false,
+    "declaration": true,
     "experimentalDecorators": true,
     "lib": [
       "dom",
-      "es2017"
+      "esnext"
     ],
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "esnext",
+    "target": "es2018",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "allowJs": true,
     "jsx": "react",
     "jsxFactory": "h"
   },
   "include": [
     "src",
-    "types/jsx.d.ts"
+    "stencil.config.ts",
+    "jest.config.js"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["src/components.d.ts"]
 }

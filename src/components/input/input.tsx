@@ -13,7 +13,7 @@ export class MyInput {
   private inputElement: HTMLInputElement;
 
   onInputChanged = () => {
-    let value = this.inputElement.value;
+    const value = this.inputElement.value;
     this.thisHappened.emit(value);
   }
   render() : JSX.Element {
