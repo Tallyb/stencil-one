@@ -67,6 +67,8 @@ describe('basic - using template', () => {
     // expect(page.root.sh).toEqualHtml('aaa');
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root.querySelector('.nice')).toBeFalsy();
+    const el = page.root.shadowRoot.querySelector('.nice');
+    expect(el.innerHTML).toEqual('My name is Roberts Julia');
     expect(page.root.shadowRoot.querySelector('.nice')).toBeTruthy();
     expect(page.root.querySelector('.cool')).toBeTruthy();
     expect(page.root).toMatchInlineSnapshot(`
