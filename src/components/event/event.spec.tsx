@@ -20,15 +20,7 @@ describe('Event', () => {
     await page.waitForChanges();
     expect(buttonSpy).toHaveBeenCalled();
     // [0][0] - first argument of the first call
-    expect(buttonSpy.mock.calls[0][0].detail).toEqual('Yep!');
+    expect(buttonSpy.mock.calls[0][0].detail).toEqual('I was clicked');
   });
 
-  it('Should run method', async() => {
-    const button = page.root.querySelector('button');
-    expect(button.textContent).toEqual('Click Me!');
-    const ret = await page.root.updateFace('New Click!');
-    await page.waitForChanges();
-    expect(ret).toEqual('NEW CLICK!');
-    expect(button.textContent).toEqual('New Click!');
-  });
 });

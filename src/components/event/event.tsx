@@ -1,31 +1,22 @@
-// eslint-disable-next-line no-unused-vars
-import { Component, State, Event, Method, EventEmitter, h , JSX } from '@stencil/core';
+import { Component, State, Event, EventEmitter, h , JSX } from '@stencil/core';
 
 @Component({
   tag: 'my-event'
 })
 export class MyEvent {
-    @State() buttonFace: string = 'Click Me!';
-    @State() clicked: boolean;
-  
+    @State() buttonText: string = 'Click Me!'; 
     @Event() buttonClicked: EventEmitter<string>;
-  
-    @Method() 
-    async updateFace(value: string): Promise<string>{
-      this.buttonFace = value;
-      return this.buttonFace.toUpperCase();
-    }
 
     onClicked(value: string) {
       console.log('value is: ', value);
-      this.clicked = !this.clicked; 
-      this.buttonClicked.emit('Yep!');   
+      this.buttonText = value; 
+      this.buttonClicked.emit(value);   
     }
     
     render(): JSX.Element {
       return (
-        <button onClick={()=>this.onClicked('ABCD')}>
-          {this.buttonFace}
+        <button onClick={()=>this.onClicked('I was clicked')}>
+          {this.buttonText}
         </button>
       );
     }
