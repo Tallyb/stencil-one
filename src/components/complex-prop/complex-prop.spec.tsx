@@ -51,8 +51,8 @@ describe('complex prop', () => {
       html: '<div></div>',
     });
     const cmp = page.doc.createElement('my-complex-prop');
-    (cmp as any).values = ['aaa', 'bbb', 'ccc'];
     page.root.appendChild(cmp);
+    (cmp as any).values = ['aaa', 'bbb', 'ccc'];
     await page.waitForChanges();
     const el = await page.doc.querySelector('my-complex-prop');
     const items = el.shadowRoot.querySelectorAll('.item');

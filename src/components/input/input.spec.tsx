@@ -12,11 +12,12 @@ describe('MyInput', () => {
     });
     const inputSpy = jest.fn();
     page.doc.addEventListener('thisHappened', inputSpy);
-    const inputField = page.root.shadowRoot.querySelector('input');
+    const inputField = page.root.querySelector('input');
     inputField.value = TEST_VALUE;
     await inputField.dispatchEvent(new Event('input'));
-    await page.waitForChanges();
+    // await page.waitForChanges();
     expect(inputSpy).toHaveBeenCalled();
+
     const ev = inputSpy.mock.calls[inputSpy.mock.calls.length - 1][0].detail;
     expect(ev).toBe(TEST_VALUE);
   });

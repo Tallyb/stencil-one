@@ -17,7 +17,6 @@ describe('Event', () => {
   it('Should emit on click', async() => {
     const button = page.root.querySelector('button');
     button.click();
-    await page.waitForChanges();
     expect(buttonSpy).toHaveBeenCalled();
     // [0][0] - first argument of the first call
     expect(buttonSpy.mock.calls[0][0].detail).toEqual('I was clicked');
