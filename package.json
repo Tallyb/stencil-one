@@ -30,7 +30,7 @@
     "@babel/core": "^7.14.8",
     "@storybook/addon-actions": "^6.3.5",
     "@storybook/addon-essentials": "^6.3.4",
-    "@storybook/addon-links": "^6.3.4",
+    "@storybook/addon-links": "^6.3.5",
     "@storybook/web-components": "^6.3.4",
     "@types/jest": "^26.0.24",
     "@types/puppeteer": "^5.4.4",
