@@ -24,7 +24,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@stencil/core": "^2.6.0"
+    "@stencil/core": "^2.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
