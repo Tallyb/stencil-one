@@ -32,7 +32,7 @@
     "@storybook/addon-essentials": "^6.3.6",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/web-components": "^6.3.7",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "@types/puppeteer": "^5.4.4",
     "babel-loader": "^8.2.2",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
