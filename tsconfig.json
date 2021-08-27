@@ -19,8 +19,7 @@
   },
   "include": [
     "src",
-    "stencil.config.ts",
-    "jest.config.js"
+    "stencil.config.ts"
   ],
   "exclude": ["src/components.d.ts"]
 }
