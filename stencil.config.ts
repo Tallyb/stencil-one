@@ -6,10 +6,12 @@ export const config: Config = {
     {
       type: 'dist',
     },
+    {
+      type: 'dist-custom-elements-bundle',
+    },
     { type: 'docs-readme' },
     {
       type: 'www',
-      baseUrl: 'https://localhost:3000',
       serviceWorker: null // disable service workers
     },
 

@@ -11,15 +11,13 @@
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2018",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "strict": true,
     "allowJs": true,
     "jsx": "react",
     "jsxFactory": "h"
   },
   "include": [
     "src",
-    "stencil.config.ts"
   ],
   "exclude": ["src/components.d.ts"]
 }
