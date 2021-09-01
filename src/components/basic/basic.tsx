@@ -7,9 +7,9 @@ import { Component, Prop, h, JSX } from '@stencil/core';
 })
 export class MyBasic {
 
-    @Prop() first: string;
+    @Prop() first: string = '';
 
-    @Prop() last: string;
+    @Prop() last: string = '';
   
 
     componentWillLoad() {

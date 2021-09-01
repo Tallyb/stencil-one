@@ -5,11 +5,11 @@ import { Component, Prop, h, JSX, Event, EventEmitter } from '@stencil/core';
   styleUrl: 'input.css',
 })
 export class MyInput {
-  @Prop() header: string;
+  @Prop() header: string = '';
 
-  @Event() thisHappened: EventEmitter<any>; 
+  @Event() thisHappened!: EventEmitter<any>; 
 
-  private inputElement: HTMLInputElement;
+  private inputElement!: HTMLInputElement;
 
   onInputChanged = () => {
     const value = this.inputElement.value;

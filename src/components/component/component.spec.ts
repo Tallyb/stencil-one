@@ -23,8 +23,8 @@ describe('component', () => {
           '<my-component first="Hello" last="World">Some Text</my-component>',
         supportsShadowDom: true,
       });
-      const span = root.shadowRoot.querySelector('span');
-      expect(span.textContent).toEqual('Hello, World! I\'m Tally Barak');
+      const span = root?.shadowRoot?.querySelector('span');
+      expect(span?.textContent).toEqual('Hello, World! I\'m Tally Barak');
     });
 
     it('Should render with serializing shadow dom', async () => {
@@ -50,9 +50,9 @@ describe('component', () => {
           Some Text
         </my-component>
       `);
-      expect(root.shadowRoot).toBeTruthy();
-      expect(root.shadowRoot.querySelector('button')).toBeTruthy();
-      expect(root.querySelector('button')).toBeFalsy();
+      expect(root?.shadowRoot).toBeTruthy();
+      expect(root?.shadowRoot?.querySelector('button')).toBeTruthy();
+      expect(root?.querySelector('button')).toBeFalsy();
     });
 
     it('Should render without serializing shadow dom', async () => {
@@ -64,7 +64,7 @@ describe('component', () => {
       });
 
       expect(root).toEqualHtml(`
-       <my-component first="Hello" last="World">
+      <my-component first="Hello" last="World">
         Some Text      
         <div class="nice">
           <span>
@@ -89,8 +89,8 @@ describe('component', () => {
           </div>
         </my-component>
       `);
-      expect(root.shadowRoot).toBeFalsy();
-      expect(root.querySelector('button')).toBeTruthy();
+      expect(root?.shadowRoot).toBeFalsy();
+      expect(root?.querySelector('button')).toBeTruthy();
     });
 
     it('Should render setting content later', async () => {
@@ -142,10 +142,10 @@ describe('component', () => {
       components: [MyComponent],
       html: '<my-component first="John" last="Doe"></my-component>',
     });
-    const button = root.shadowRoot.querySelector('button');
+    const button = root?.shadowRoot?.querySelector('button');
     const buttonClicked = jest.fn();
     win.addEventListener('buttonClicked', buttonClicked);
-    button.click();
+    button?.click();
     expect(buttonClicked).toHaveBeenCalled;
   });
 
@@ -153,13 +153,13 @@ describe('component', () => {
     const page = await newSpecPage({
       components: [MyComponent],
       html: '<my-component first="John" last="Doe"></my-component>',
-    });
+    })!;
 
-    const button = page.root.shadowRoot.querySelector('button');
-    expect(button.textContent).toEqual('Click Me!');
+    const button = page.root?.shadowRoot?.querySelector('button');
+    expect(button?.textContent).toEqual('Click Me!');
     const ret = await page.rootInstance.updateFace('New Click!');
     await page.waitForChanges();
     expect(ret).toEqual('NEW CLICK!');
-    expect(button.textContent).toEqual('New Click!');
+    expect(button?.textContent).toEqual('New Click!');
   });
 });

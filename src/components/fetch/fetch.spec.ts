@@ -25,10 +25,10 @@ describe('fetch', () => {
     const page = await newSpecPage({
       components: [MyFetchComponent],
       html
-    });    
+    })!;    
 
     expect(fetchMock).toHaveBeenCalledWith('./assets/i18n/fr.json');
-    page.root.language = 'he';
+    page!.root!.language = 'he';
     await page.waitForChanges();
     expect(fetchMock).toHaveBeenCalledWith('./assets/i18n/he.json');
   });

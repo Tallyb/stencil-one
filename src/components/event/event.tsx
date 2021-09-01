@@ -5,7 +5,7 @@ import { Component, State, Event, EventEmitter, h , JSX } from '@stencil/core';
 })
 export class MyEvent {
     @State() buttonText: string = 'Click Me!'; 
-    @Event() buttonClicked: EventEmitter<string>;
+    @Event() buttonClicked!: EventEmitter<string>;
 
     onClicked(value: string) {
       console.log('value is: ', value);

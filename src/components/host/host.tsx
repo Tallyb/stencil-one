@@ -9,7 +9,7 @@ export class MyHostComponent {
 
   @Prop() values: Array<string> = [];
 
-  @Element() host;
+  @Element() host: any;
   render() : JSX.Element {
     return (
       <Host class="cool">

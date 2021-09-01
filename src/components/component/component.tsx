@@ -10,22 +10,27 @@ export class MyComponent {
   /**
    * The first name
    */
-  @Prop() first: string;
+
+  @Prop() first: string = '';
 
   /**
    * The middle name
    */
-  @Prop() middle: string;
+
+  @Prop() middle: string = '';
 
   /**
    * The last name
    */
-  @Prop() last: string;
+
+  @Prop() last: string = '';
 
   @State() buttonFace: string = 'Click Me!';
-  @State() clicked: boolean;
+  @State()
+  clicked!: boolean;
 
-  @Event() buttonClicked: EventEmitter<string>;
+  @Event()
+  buttonClicked!: EventEmitter<string>;
   
   @Method() 
   async updateFace(value: string): Promise<string>{

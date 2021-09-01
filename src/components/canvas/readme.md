@@ -1,4 +1,4 @@
-# my-basic
+# my-canvas
 
 
 
@@ -9,8 +9,7 @@
 
 | Property | Attribute | Description | Type     | Default |
 | -------- | --------- | ----------- | -------- | ------- |
-| `first`  | `first`   |             | `string` | `''`    |
-| `last`   | `last`    |             | `string` | `''`    |
+| `src`    | `src`     |             | `string` | `''`    |
 
 
 ----------------------------------------------

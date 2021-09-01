@@ -49,13 +49,13 @@ describe('complex prop', () => {
     const page = await newSpecPage({
       components: [MyComplexPropComponent],
       html: '<div></div>',
-    });
+    })!;
     const cmp = page.doc.createElement('my-complex-prop');
-    page.root.appendChild(cmp);
+    page.root?.appendChild(cmp);
     (cmp as any).values = ['aaa', 'bbb', 'ccc'];
     await page.waitForChanges();
-    const el = await page.doc.querySelector('my-complex-prop');
-    const items = el.shadowRoot.querySelectorAll('.item');
+    const el = await page.doc.querySelector('my-complex-prop')!;
+    const items = el.shadowRoot?.querySelectorAll('.item')!;
     expect(items.length).toEqual(3);
     expect(items[0].textContent).toEqual('AAA');
     expect(page.root).toMatchInlineSnapshot(`
@@ -89,8 +89,8 @@ describe('complex prop', () => {
       components: [MyComplexPropComponent],
       template: () => <my-complex-prop values={values}></my-complex-prop>,
     });
-    const el = await page.doc.querySelector('my-complex-prop');
-    const items = el.shadowRoot.querySelectorAll('.item');
+    const el: any = await page.doc.querySelector('my-complex-prop')!;
+    const items = el.shadowRoot?.querySelectorAll('.item')!;
     expect(items.length).toEqual(3);
     expect(items[0].textContent).toEqual('AAA');
     expect(page.root).toMatchInlineSnapshot(`

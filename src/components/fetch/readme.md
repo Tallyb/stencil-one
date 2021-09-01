@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type     | Default     |
-| ---------- | ---------- | ----------- | -------- | ----------- |
-| `language` | `language` |             | `string` | `undefined` |
+| Property                | Attribute  | Description | Type     | Default     |
+| ----------------------- | ---------- | ----------- | -------- | ----------- |
+| `language` _(required)_ | `language` |             | `string` | `undefined` |
 
 
 ----------------------------------------------

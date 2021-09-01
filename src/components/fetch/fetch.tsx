@@ -6,7 +6,7 @@ import { Component, h, JSX,  Prop, Watch } from '@stencil/core';
 })
 export class MyFetchComponent {
 
-    @Prop() language: string;
+    @Prop() language!: string;
 
     @Watch('language')
     async onLanguageChange() {

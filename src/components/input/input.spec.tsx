@@ -9,12 +9,12 @@ describe('MyInput', () => {
     const page = await newSpecPage({
       components: [ MyInput ],
       html: '<my-input ></my-input>'
-    });
+    })!;
     const inputSpy = jest.fn();
     page.doc.addEventListener('thisHappened', inputSpy);
-    const inputField = page.root.querySelector('input');
-    inputField.value = TEST_VALUE;
-    await inputField.dispatchEvent(new Event('input'));
+    const inputField = page.root?.querySelector('input');
+    inputField!.value = TEST_VALUE;
+    await inputField?.dispatchEvent(new Event('input'));
     // await page.waitForChanges();
     expect(inputSpy).toHaveBeenCalled();
 

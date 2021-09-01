@@ -10,6 +10,9 @@ export namespace Components {
         "first": string;
         "last": string;
     }
+    interface MyCanvas {
+        "src": string;
+    }
     interface MyComplexProp {
         "values": Array<string>;
     }
@@ -29,7 +32,6 @@ export namespace Components {
         "updateFace": (value: string) => Promise<string>;
     }
     interface MyEvent {
-        "updateFace": (value: string) => Promise<string>;
     }
     interface MyFetch {
         "language": string;
@@ -64,6 +66,12 @@ declare global {
     var HTMLMyBasicElement: {
         prototype: HTMLMyBasicElement;
         new (): HTMLMyBasicElement;
+    };
+    interface HTMLMyCanvasElement extends Components.MyCanvas, HTMLStencilElement {
+    }
+    var HTMLMyCanvasElement: {
+        prototype: HTMLMyCanvasElement;
+        new (): HTMLMyCanvasElement;
     };
     interface HTMLMyComplexPropElement extends Components.MyComplexProp, HTMLStencilElement {
     }
@@ -115,6 +123,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-basic": HTMLMyBasicElement;
+        "my-canvas": HTMLMyCanvasElement;
         "my-complex-prop": HTMLMyComplexPropElement;
         "my-component": HTMLMyComponentElement;
         "my-event": HTMLMyEventElement;
@@ -129,6 +138,9 @@ declare namespace LocalJSX {
     interface MyBasic {
         "first"?: string;
         "last"?: string;
+    }
+    interface MyCanvas {
+        "src": string;
     }
     interface MyComplexProp {
         "values"?: Array<string>;
@@ -152,7 +164,7 @@ declare namespace LocalJSX {
         "onButtonClicked"?: (event: CustomEvent<string>) => void;
     }
     interface MyFetch {
-        "language"?: string;
+        "language": string;
     }
     interface MyHost {
         "values"?: Array<string>;
@@ -180,6 +192,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-basic": MyBasic;
+        "my-canvas": MyCanvas;
         "my-complex-prop": MyComplexProp;
         "my-component": MyComponent;
         "my-event": MyEvent;
@@ -195,6 +208,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-basic": LocalJSX.MyBasic & JSXBase.HTMLAttributes<HTMLMyBasicElement>;
+            "my-canvas": LocalJSX.MyCanvas & JSXBase.HTMLAttributes<HTMLMyCanvasElement>;
             "my-complex-prop": LocalJSX.MyComplexProp & JSXBase.HTMLAttributes<HTMLMyComplexPropElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-event": LocalJSX.MyEvent & JSXBase.HTMLAttributes<HTMLMyEventElement>;
