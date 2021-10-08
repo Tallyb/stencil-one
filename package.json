@@ -26,7 +26,7 @@
   "dependencies": {
     "@stencil/core": "^2.8.1",
     "@storybook/builder-webpack5": "^6.3.8",
-    "@storybook/manager-webpack5": "^6.3.9"
+    "@storybook/manager-webpack5": "^6.3.10"
   },
   "devDependencies": {
     "@babel/core": "7.15.8",
