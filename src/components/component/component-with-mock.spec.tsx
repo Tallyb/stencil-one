@@ -2,7 +2,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { h } from '@stencil/core';
 
-const mockFormat = jest.fn();
+const mockFormat = jest.fn(); // function name must start with mock (for hoisting)
 jest.mock('../../utils', () => { //import here must be exactly the same as in the tested file
   return {
     format: mockFormat
