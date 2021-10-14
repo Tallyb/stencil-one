@@ -41,7 +41,7 @@
     "@typescript-eslint/eslint-plugin": "5.0.0",
     "@typescript-eslint/parser": "5.0.0",
     "babel-loader": "8.2.2",
-    "eslint": "8.0.0",
+    "eslint": "8.0.1",
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-jest": "25.0.5",
     "fetch-mock": "9.11.0",
