@@ -24,7 +24,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@stencil/core": "^2.9.0",
+    "@stencil/core": "^2.10.0",
     "@storybook/addon-essentials": "^6.3.12"
   },
   "devDependencies": {
