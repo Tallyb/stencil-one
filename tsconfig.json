@@ -17,7 +17,7 @@
     "jsxFactory": "h"
   },
   "include": [
-    "src",
+    "src"
   ],
   "exclude": ["src/components.d.ts"]
 }

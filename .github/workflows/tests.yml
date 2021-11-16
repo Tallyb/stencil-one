@@ -10,6 +10,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env: 
+  CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,7 +28,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2
       with:
-        version: '>=12.0.0'
+        version: '16'
 
     - name: cache-node-modules
       uses: actions/cache@v2
@@ -40,6 +43,9 @@ jobs:
 
     - name: lint
       run: npm run lint
-      
+
+    - name: codecov
+      run: npx codecov --disable=gcov -f coverage/coverage-final.json -t ${{env.CODECOV_TOKEN}}
+
     - name: tests
       run: npm run test
