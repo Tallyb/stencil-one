@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@stencil/core": "^2.10.0",
-    "@storybook/addon-essentials": "^6.3.12"
+    "@storybook/addon-essentials": "^6.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
