@@ -24,18 +24,18 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@stencil/core": "^2.10.0",
-    "@storybook/addon-essentials": "^6.3.12"
+    "@stencil/core": "2.11.0"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
-    "@storybook/addon-actions": "6.4.4",
-    "@storybook/addon-links": "6.4.4",
-    "@storybook/builder-webpack5": "6.4.4",
-    "@storybook/html": "6.4.4",
-    "@storybook/manager-webpack5": "6.4.4",
+    "@storybook/addon-actions": "6.4.8",
+    "@storybook/addon-links": "6.4.8",
+    "@storybook/addon-essentials": "6.4.8",
+    "@storybook/builder-webpack5": "6.4.8",
+    "@storybook/html": "6.4.8",
+    "@storybook/manager-webpack5": "6.4.8",
     "@storybook/preset-scss": "1.0.3",
-    "@storybook/web-components": "6.4.4",
+    "@storybook/web-components": "6.4.8",
     "@types/jest": "27.0.1",
     "@types/puppeteer": "5.4.4",
     "@typescript-eslint/eslint-plugin": "5.5.0",
