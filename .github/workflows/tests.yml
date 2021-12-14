@@ -28,7 +28,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2
       with:
-        version: '16'
+        node-version: '16'
 
     - name: cache-node-modules
       uses: actions/cache@v2
