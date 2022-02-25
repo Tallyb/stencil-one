@@ -42,7 +42,7 @@
     "@typescript-eslint/parser": "5.12.1",
     "babel-loader": "8.2.3",
     "codecov": "3.8.3",
-    "eslint": "8.9.0",
+    "eslint": "8.10.0",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jest": "26.1.1",
     "fetch-mock": "9.11.0",
