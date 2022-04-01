@@ -3,3 +3,4 @@ coverage/
 src/components.d.ts
 stencil.config.ts
 jest.config.js
+babel.config.js

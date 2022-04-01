@@ -13,12 +13,12 @@ describe('complex prop', () => {
   it('should render', async () => {
     const page = await newSpecPage({
       components: [MyComplexPropComponent],
-      html: `
-                <my-complex-prop>
-                </my-complex-prop>
-            `,
+      template: () => (
+        <my-complex-prop values={['aaa', 'bbb', 'ccc']}>
+        </my-complex-prop>
+      )
     });
-    page.rootInstance.values = ['aaa', 'bbb', 'ccc'];
+    // page.rootInstance.values = ['aaa', 'bbb', 'ccc'];
     await page.waitForChanges();
     expect(page.root).toMatchInlineSnapshot(`
       <my-complex-prop>
