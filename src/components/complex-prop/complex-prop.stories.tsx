@@ -6,6 +6,5 @@ export default {
   components: MyComplexPropComponent
 };
 
-export const Default = () => 
-  (<my-complex-prop values={['aaa', 'bbb']}></my-complex-prop>);
+export const Default = () => <my-complex-prop values={['aaa', 'bbb']}></my-complex-prop>;
 

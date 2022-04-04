@@ -14,9 +14,8 @@ describe('complex prop', () => {
     const page = await newSpecPage({
       components: [MyComplexPropComponent],
       template: () => (
-        <my-complex-prop values={['aaa', 'bbb', 'ccc']}>
-        </my-complex-prop>
-      )
+        <my-complex-prop values={['aaa', 'bbb', 'ccc']}></my-complex-prop>
+      ),
     });
     // page.rootInstance.values = ['aaa', 'bbb', 'ccc'];
     await page.waitForChanges();
@@ -26,17 +25,17 @@ describe('complex prop', () => {
           <div class="nice">
             <div class="item">
               <span>
-                aaa
+                AAA
               </span>
             </div>
             <div class="item">
               <span>
-                bbb
+                BBB
               </span>
             </div>
             <div class="item">
               <span>
-                ccc
+                CCC
               </span>
             </div>
           </div>

@@ -27,10 +27,10 @@ export class MyComponent {
 
   @State() buttonFace: string = 'Click Me!';
   @State()
-  clicked!: boolean;
+    clicked!: boolean;
 
   @Event()
-  buttonClicked!: EventEmitter<string>;
+    buttonClicked!: EventEmitter<string>;
   
   @Method() 
   async updateFace(value: string): Promise<string>{
