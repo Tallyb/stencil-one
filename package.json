@@ -27,7 +27,7 @@
     "@stencil/core": "2.15.1"
   },
   "devDependencies": {
-    "@babel/core": "7.17.8",
+    "@babel/core": "7.17.9",
     "@storybook/addon-actions": "6.4.22",
     "@storybook/addon-essentials": "6.4.22",
     "@storybook/addon-links": "6.4.22",
@@ -39,7 +39,7 @@
     "@types/puppeteer": "5.4.5",
     "@typescript-eslint/eslint-plugin": "5.20.0",
     "@typescript-eslint/parser": "5.20.0",
-    "babel-loader": "8.2.4",
+    "babel-loader": "8.2.5",
     "codecov": "3.8.3",
     "eslint": "8.13.0",
     "eslint-plugin-import": "2.26.0",
