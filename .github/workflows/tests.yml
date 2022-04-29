@@ -6,9 +6,7 @@ name: Tests
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
 
 env: 
   CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
