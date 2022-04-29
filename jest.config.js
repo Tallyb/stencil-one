@@ -1,6 +1,6 @@
 const config = {
   preset: '@stencil/core/testing',
-  testRunner: 'jest-jasmine2',
+  testRunner: 'jasmine2',
   collectCoverage: true,
   coverageReporters: ['json', 'html', 'text'],
 };
