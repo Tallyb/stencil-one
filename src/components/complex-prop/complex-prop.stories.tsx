@@ -1,3 +1,6 @@
+/** @jsxRuntime classic */
+/** @jsx h */
+
 import {h} from '@stencil/core';
 
 export default {

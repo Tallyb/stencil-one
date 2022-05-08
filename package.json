@@ -21,7 +21,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint src/**/*.ts",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --host localhost" ,
     "build-storybook": "build-storybook"
   },
   "dependencies": {

@@ -6,6 +6,7 @@ const h = import('jsx-dom');
 
 const OUTPUT_DIR = '../dist';
 const PROJECT_NAME = 'stencil-one';
+
 module.exports = {
   stories: [
     '../src/**/*.stories.mdx',
@@ -25,19 +26,19 @@ module.exports = {
   
     if(tsxRule) {
         const options = tsxRule.use[0].options;
-        options.presets = options.presets || []; 
-        const presetIndex = options.presets.findIndex( p => p.includes('typescript'));
-        options.presets[presetIndex] = [ options.presets[presetIndex] , {isTSX: true, allExtensions: true, }];
-        // options.plugins = [
-        //   'plugin-transform-react-jsx',
-        //   ...options.plugins
-        // ];
+        // options.presets = options.presets || []; 
+        // const presetIndex = options.presets.findIndex( p => p.includes('typescript'));
+        // options.presets[presetIndex] = [ options.presets[presetIndex] , {isTSX: true, allExtensions: true, }];
+        options.plugins = [
+          '@babel/plugin-transform-react-jsx',
+          ...options.plugins
+        ];
     }
+
     return config;
   },
 
   webpackFinal: async (config, { configType }) => {
-    
     // Custom webpack config to tell Storybook where to find the compiled files from Stencil
 
     // config.entry.push(path.join(__dirname, OUTPUT_DIR, `index.js`));

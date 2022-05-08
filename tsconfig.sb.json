@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts?"],
+  "include": ["src/**/*.ts?", ".storybook/"],
   "exclude": ["src/**/*.spec.ts"],
   "compilerOptions": {
     "outDir": " dist/out-tsc"
