@@ -1,11 +1,8 @@
-import { h } from '@stencil/core';
 import { makeDecorator, MakeDecoratorResult } from '@storybook/addons';
 
 const stencilClient = require("@stencil/core/internal/client");
 
-export const withAppWrapper: MakeDecoratorResult = (storyFn, context) => {
-  console.log(storyFn());
-  console.log(context);
+export const stencilWrapper: MakeDecoratorResult = (storyFn, context) => {
   const host = document.createElement('div');
   stencilClient.renderVdom(
     {

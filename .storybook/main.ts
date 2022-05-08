@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
-const h = import('jsx-dom');
 
 const OUTPUT_DIR = '../dist';
 const PROJECT_NAME = 'stencil-one';
@@ -30,7 +29,9 @@ module.exports = {
         // const presetIndex = options.presets.findIndex( p => p.includes('typescript'));
         // options.presets[presetIndex] = [ options.presets[presetIndex] , {isTSX: true, allExtensions: true, }];
         options.plugins = [
-          '@babel/plugin-transform-react-jsx',
+          ['@babel/plugin-transform-react-jsx', {
+            prgama: 'h'
+          }],
           ...options.plugins
         ];
     }

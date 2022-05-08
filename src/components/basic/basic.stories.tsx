@@ -1,8 +1,8 @@
+
 /** @jsx h */
 /** @jsxRuntime classic */
 
 import {h} from '@stencil/core';
-
 
 export default {
   title: 'My Basic',

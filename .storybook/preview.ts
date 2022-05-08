@@ -1,16 +1,13 @@
 
-/** @jsx h */
-/** @jsxRuntime classic */
-
 import { addDecorator } from '@storybook/html';
 
-import { withAppWrapper } from './decorators/wrapper';
+import { stencilWrapper } from './decorators/wrapper';
 
 import {defineCustomElements} from '../dist/loader';
 
 defineCustomElements();
 
-addDecorator(withAppWrapper);
+addDecorator(stencilWrapper);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

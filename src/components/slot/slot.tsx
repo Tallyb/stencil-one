@@ -13,7 +13,10 @@ export class MySlotComponent {
     return (
       <div class="cool">
         <h>I am a header </h>
-        <slot/>
+        <div>
+          <slot/>
+        </div>
+        <h>I am a footer </h>
       </div>
     );
   }
