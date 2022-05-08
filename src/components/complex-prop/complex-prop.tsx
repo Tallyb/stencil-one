@@ -18,7 +18,7 @@ export class MyComplexPropComponent {
   //   //change to upper here
   // } 
 
-  componentWillLoad() { // this wi
+  componentWillLoad() { 
     console.log('Will load', this.values);
     this.values = this.toUpper(this.values);
   }

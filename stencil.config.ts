@@ -1,13 +1,10 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'myspace',
+  namespace: 'stencil-one',
   outputTargets:[
     {
       type: 'dist',
-    },
-    {
-      type: 'dist-custom-elements-bundle',
     },
     { type: 'docs-readme' },
     {

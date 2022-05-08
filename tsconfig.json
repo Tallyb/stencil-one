@@ -19,5 +19,8 @@
   "include": [
     "src"
   ],
-  "exclude": ["src/components.d.ts"]
+  "exclude": [
+    "src/components.d.ts",
+    "src/**/*.spec.{ts,tsx}",
+    "src/**/*.stories.{ts,tsx}"]
 }

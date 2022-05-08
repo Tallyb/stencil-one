@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`complex prop should render 1`] = `
+<my-slot>
+  <mock:shadow-root>
+    <div class="cool">
+      <h>
+        I am a header
+      </h>
+      <div>
+        <slot></slot>
+      </div>
+      <h>
+        I am a footer
+      </h>
+    </div>
+  </mock:shadow-root>
+  <my-component>
+    <mock:shadow-root>
+      <div class="nice">
+        <span>
+          Hello, World! I'm Julia Roberts
+        </span>
+        <button>
+          Click Me!
+        </button>
+      </div>
+    </mock:shadow-root>
+  </my-component>
+</my-slot>
+`;
