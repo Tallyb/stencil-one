@@ -21,16 +21,16 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint src/**/*.ts",
-    "storybook": "start-storybook -p 6006 --host localhost" ,
+    "storybook": "start-storybook -p 6006 --host localhost",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@stencil/core": "2.15.1"
   },
   "devDependencies": {
+    "@babel/core": "7.17.10",
     "@babel/plugin-syntax-jsx": "7.16.7",
     "@babel/plugin-transform-react-jsx": "7.17.3",
-    "@babel/core": "7.17.10",
     "@storybook/addon-actions": "6.4.22",
     "@storybook/addon-essentials": "6.4.22",
     "@storybook/addon-links": "6.4.22",
@@ -44,8 +44,8 @@
     "@typescript-eslint/parser": "5.22.0",
     "babel-loader": "8.2.5",
     "codecov": "3.8.3",
-    "copy-webpack-plugin": "10.2.4",
     "concurrently": "7.1.0",
+    "copy-webpack-plugin": "10.2.4",
     "eslint": "8.14.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest": "26.1.5",
@@ -53,15 +53,14 @@
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
     "jest-fetch-mock": "3.0.3",
-    "jsx-dom": "8.0.1-beta.5",
     "lit-html": "2.2.3",
     "node-fetch": "3.2.4",
     "prettier": "2.6.2",
     "puppeteer": "13.7.0",
     "standard-version": "9.3.2",
     "storybook-addon-jsx": "7.3.14",
-    "write-file-webpack-plugin": "4.5.1",
-    "typescript": "4.6.4"
+    "typescript": "4.6.4",
+    "write-file-webpack-plugin": "4.5.1"
   },
   "license": "MIT"
 }
