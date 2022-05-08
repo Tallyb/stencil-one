@@ -1,5 +1,5 @@
-/** @jsxRuntime classic */
 /** @jsx h */
+/** @jsxRuntime classic */
 
 import {h} from '@stencil/core';
 

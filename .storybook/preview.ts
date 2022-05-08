@@ -1,4 +1,7 @@
 
+/** @jsx h */
+/** @jsxRuntime classic */
+
 import { addDecorator } from '@storybook/html';
 
 import { withAppWrapper } from './decorators/wrapper';
