@@ -1,11 +1,29 @@
 
 import { addDecorator } from '@storybook/html';
 
-import { stencilWrapper } from './decorators/wrapper';
-
 import {defineCustomElements} from '../dist/loader';
 
+const stencilClient = require("@stencil/core/internal/client");
+
 defineCustomElements();
+
+const stencilWrapper = (storyFn, context) => {
+  const host = document.createElement('div');
+  stencilClient.renderVdom(
+    {
+      $ancestorComponent$: undefined,
+      $flags$: 0,
+      $modeName$: undefined,
+      $cmpMeta$: {
+        $flags$: 0,
+        $tagName$: 'div',  
+      },
+      $hostElement$: host,
+    },
+    storyFn(context)
+  );
+  return host;
+}
 
 addDecorator(stencilWrapper);
 
