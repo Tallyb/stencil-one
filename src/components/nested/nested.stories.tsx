@@ -4,10 +4,10 @@
 import {h} from '@stencil/core';
 
 export default {
-  title: 'My Basic',
+  title: 'My Nested',
 };
 
 export const Default = {
-  render: () => (<my-basic first="Millie" last="Brown"></my-basic>)
+  render: () => (<my-nested first="Millie" last="Brown"></my-nested>)
 };
 

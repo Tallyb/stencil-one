@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nested - using template should render with shadow dom 1`] = `
+<my-nested>
+  <mock:shadow-root>
+    <div>
+      <my-basic>
+        <mock:shadow-root>
+          <div>
+            <p class="nice">
+              My name is Connery Sean
+            </p>
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </my-basic>
+      <p class="very-nice">
+        My name is Roberts Julia
+      </p>
+    </div>
+  </mock:shadow-root>
+</my-nested>
+`;

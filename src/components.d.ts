@@ -56,6 +56,10 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyNested {
+        "first": string;
+        "last": string;
+    }
     interface MySlot {
         "values": Array<string>;
     }
@@ -115,6 +119,12 @@ declare global {
         prototype: HTMLMyInstanceElement;
         new (): HTMLMyInstanceElement;
     };
+    interface HTMLMyNestedElement extends Components.MyNested, HTMLStencilElement {
+    }
+    var HTMLMyNestedElement: {
+        prototype: HTMLMyNestedElement;
+        new (): HTMLMyNestedElement;
+    };
     interface HTMLMySlotElement extends Components.MySlot, HTMLStencilElement {
     }
     var HTMLMySlotElement: {
@@ -131,6 +141,7 @@ declare global {
         "my-host": HTMLMyHostElement;
         "my-input": HTMLMyInputElement;
         "my-instance": HTMLMyInstanceElement;
+        "my-nested": HTMLMyNestedElement;
         "my-slot": HTMLMySlotElement;
     }
 }
@@ -187,6 +198,10 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyNested {
+        "first"?: string;
+        "last"?: string;
+    }
     interface MySlot {
         "values"?: Array<string>;
     }
@@ -200,6 +215,7 @@ declare namespace LocalJSX {
         "my-host": MyHost;
         "my-input": MyInput;
         "my-instance": MyInstance;
+        "my-nested": MyNested;
         "my-slot": MySlot;
     }
 }
@@ -216,6 +232,7 @@ declare module "@stencil/core" {
             "my-host": LocalJSX.MyHost & JSXBase.HTMLAttributes<HTMLMyHostElement>;
             "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
             "my-instance": LocalJSX.MyInstance & JSXBase.HTMLAttributes<HTMLMyInstanceElement>;
+            "my-nested": LocalJSX.MyNested & JSXBase.HTMLAttributes<HTMLMyNestedElement>;
             "my-slot": LocalJSX.MySlot & JSXBase.HTMLAttributes<HTMLMySlotElement>;
         }
     }

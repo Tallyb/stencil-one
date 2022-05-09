@@ -1,6 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
+  sourceMap: !process.env.CI,
   namespace: 'stencil-one',
   outputTargets:[
     {
