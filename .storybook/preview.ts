@@ -5,7 +5,7 @@ import {defineCustomElements} from '../dist/loader';
 
 const stencilClient = require("@stencil/core/internal/client");
 
-defineCustomElements();
+defineCustomElements(window);
 
 const stencilWrapper = (storyFn, context) => {
   const host = document.createElement('div');
@@ -22,7 +22,7 @@ const stencilWrapper = (storyFn, context) => {
     },
     storyFn(context)
   );
-  return host;
+  return host.children[0];
 }
 
 addDecorator(stencilWrapper);
