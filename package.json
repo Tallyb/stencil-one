@@ -38,7 +38,7 @@
     "@storybook/html": "6.4.22",
     "@storybook/manager-webpack5": "6.4.22",
     "@storybook/preset-scss": "1.0.3",
-    "@types/jest": "27.5.0",
+    "@types/jest": "27.5.1",
     "@types/puppeteer": "5.4.6",
     "@typescript-eslint/eslint-plugin": "5.25.0",
     "@typescript-eslint/parser": "5.25.0",
