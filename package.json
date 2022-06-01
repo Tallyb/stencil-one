@@ -54,7 +54,7 @@
     "jest-cli": "27.5.1",
     "jest-fetch-mock": "3.0.3",
     "lit-html": "2.2.5",
-    "node-fetch": "3.2.4",
+    "node-fetch": "3.2.5",
     "prettier": "2.6.2",
     "puppeteer": "14.1.2",
     "standard-version": "9.5.0",
