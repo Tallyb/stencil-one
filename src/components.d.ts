@@ -64,6 +64,18 @@ export namespace Components {
         "values": Array<string>;
     }
 }
+export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyComponentElement;
+}
+export interface MyEventCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyEventElement;
+}
+export interface MyInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyInputElement;
+}
 declare global {
     interface HTMLMyBasicElement extends Components.MyBasic, HTMLStencilElement {
     }
@@ -169,10 +181,10 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
-        "onButtonClicked"?: (event: CustomEvent<string>) => void;
+        "onButtonClicked"?: (event: MyComponentCustomEvent<string>) => void;
     }
     interface MyEvent {
-        "onButtonClicked"?: (event: CustomEvent<string>) => void;
+        "onButtonClicked"?: (event: MyEventCustomEvent<string>) => void;
     }
     interface MyFetch {
         "language": string;
@@ -182,7 +194,7 @@ declare namespace LocalJSX {
     }
     interface MyInput {
         "header"?: string;
-        "onThisHappened"?: (event: CustomEvent<any>) => void;
+        "onThisHappened"?: (event: MyInputCustomEvent<any>) => void;
     }
     interface MyInstance {
         /**
