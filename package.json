@@ -28,7 +28,7 @@
     "@stencil/core": "2.17.1"
   },
   "devDependencies": {
-    "@babel/core": "7.18.6",
+    "@babel/core": "7.18.9",
     "@babel/plugin-syntax-jsx": "7.18.6",
     "@babel/plugin-transform-react-jsx": "7.18.6",
     "@storybook/addon-actions": "6.5.9",
