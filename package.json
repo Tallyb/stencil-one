@@ -44,7 +44,7 @@
     "@typescript-eslint/parser": "5.30.6",
     "babel-loader": "8.2.5",
     "codecov": "3.8.3",
-    "concurrently": "7.2.2",
+    "concurrently": "7.3.0",
     "copy-webpack-plugin": "11.0.0",
     "eslint": "8.19.0",
     "eslint-plugin-import": "2.26.0",
