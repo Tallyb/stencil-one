@@ -48,7 +48,7 @@
     "copy-webpack-plugin": "11.0.0",
     "eslint": "8.20.0",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jest": "26.6.0",
+    "eslint-plugin-jest": "26.7.0",
     "fetch-mock": "9.11.0",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
