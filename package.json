@@ -55,7 +55,7 @@
     "jest-fetch-mock": "3.0.3",
     "lit-html": "2.5.0",
     "node-fetch": "3.3.0",
-    "prettier": "2.8.1",
+    "prettier": "2.8.3",
     "puppeteer": "19.4.1",
     "standard-version": "9.5.0",
     "storybook-addon-jsx": "7.3.14",
