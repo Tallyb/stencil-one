@@ -56,7 +56,7 @@
     "lit-html": "2.6.1",
     "node-fetch": "3.3.0",
     "prettier": "2.8.3",
-    "puppeteer": "19.5.2",
+    "puppeteer": "19.6.2",
     "standard-version": "9.5.0",
     "storybook-addon-jsx": "7.3.14",
     "typescript": "4.9.4",
