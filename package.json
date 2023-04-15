@@ -35,7 +35,7 @@
     "@storybook/addon-essentials": "6.5.16",
     "@storybook/addon-links": "6.5.16",
     "@storybook/builder-webpack5": "6.5.16",
-    "@storybook/html": "6.5.16",
+    "@storybook/html": "7.0.5",
     "@storybook/manager-webpack5": "6.5.16",
     "@storybook/preset-scss": "1.0.3",
     "@types/jest": "27.5.2",
